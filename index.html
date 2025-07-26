@@ -1,29 +1,88 @@
+<!-- index.html (Homepage) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jillian Grace Bent</title>
-  <style>
-    body {
-      font-family: 'Helvetica Neue', sans-serif;
-      text-align: center;
-      padding: 80px 20px;
-      background-color: #fffaf7;
-      color: #333;
-    }
-    h1 {
-      font-size: 2.5rem;
-    }
-    p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 20px auto;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jillian Bent</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello, I'm Jillian 👋</h1>
-  <p>This is my personal website — built entirely on GitHub.</p>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <header class="hero">
+    <h1>Hello, I'm Jillian</h1>
+    <p>A creative and spiritual soul expressing the world through story, design, and connection.</p>
+  </header>
+  <section class="media-gallery">
+    <h2>Creative Work</h2>
+    <div class="media-grid">
+      <img src="placeholder1.jpg" alt="Photo 1">
+      <img src="placeholder2.jpg" alt="Photo 2">
+      <video controls src="placeholder-video.mp4"></video>
+    </div>
+  </section>
 </body>
 </html>
+
+<!-- style.css -->
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #FBF8F3;
+  color: #333;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem;
+  background-color: #F3ECE7;
+  margin: 0;
+}
+nav ul li {
+  margin: 0 1rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #7B8B52;
+  font-weight: bold;
+}
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #F3ECE7;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.media-gallery {
+  padding: 2rem;
+}
+.media-gallery h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.media-grid img, .media-grid video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Additional pages like about.html, services.html, and contact.html will follow this style */
