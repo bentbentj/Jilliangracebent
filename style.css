@@ -85,4 +85,16 @@ nav ul li a {
   margin-top: 2rem;
   color: #7B8B52;
 }
+.about-content {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+.about-content .bio p {
+  margin-bottom: 1.5rem;
+}
 
