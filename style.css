@@ -112,4 +112,23 @@ nav ul li a {
 .media-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1
+.services-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.services-content h2 {
+  font-size: 1.2rem;
+  text-transform: lowercase;
+  font-weight: 600;
+  margin-top: 2rem;
+  color: #333;
+}
+
+.services-content p {
+  margin-bottom: 1.5rem;
+}
 
