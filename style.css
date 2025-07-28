@@ -131,4 +131,12 @@ nav ul li a {
 .services-content p {
   margin-bottom: 1.5rem;
 }
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
 
