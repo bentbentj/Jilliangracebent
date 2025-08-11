@@ -108,3 +108,26 @@ h2.section-title {
   .nav ul { gap: .9rem; }
 }
 xt-d
+header nav ul,
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.9rem 0;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+header nav ul a,
+.nav-list a {
+  color: #7B8B52;
+  font-weight: 600;
+  padding: .4rem .6rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
+header nav ul a:hover,
+.nav-list a:hover,
+header nav ul a.active,
+.nav-list a.active {
+  background: rgba(123,139,82,.12);
+}
