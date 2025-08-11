@@ -1,24 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>hi, I’m Jillian | Home</title>
-  <meta name="description" content="Storyteller, designer, and creative spirit. Explore my visual world and offerings.">
-  <link rel="icon" href="assets/img/favicon.png">
-  <link rel="stylesheet" href="style.css">
-  <meta property="og:title" content="Jillian Grace Bent">
-  <meta property="og:description" content="Creative work, services, portfolio, and contact.">
-  <meta property="og:type" content="website">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | Jillian Bent</title>
+  <meta name="description" content="Who I am and how I work." />
+  <link rel="stylesheet" href="style.css?v=7" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-  <!-- Header -->
   <header class="site-header">
     <nav class="nav container" aria-label="Primary">
       <ul class="nav-list">
-        <li><a href="index.html" class="active">home</a></li>
-        <li><a href="about.html">about</a></li>
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html" class="active">about</a></li>
         <li><a href="services.html">services</a></li>
         <li><a href="portfolio.html">portfolio</a></li>
         <li><a href="contact.html">contact</a></li>
@@ -26,68 +21,27 @@
     </nav>
   </header>
 
-  <!-- Main -->
   <main class="container">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="center">
-        <h1>hi, I’m Jillian</h1>
-        <p>Storyteller, designer, and creative spirit. Scroll to explore my visual world, each piece links to a project or an offering.</p>
-      </div>
+    <section class="hero center">
+      <h1 class="hero-title">About</h1>
+      <p class="hero-subtitle" style="max-width:65ch;margin:0 auto;">
+        I create visual stories and practical brand systems. Calm design, clear copy, and measurable outcomes.
+      </p>
     </section>
 
-    <!-- Creative Work -->
     <section class="section">
-      <h2 class="section-title">Creative Work</h2>
-
-      <div class="grid">
-        <!-- Card 1 -->
-        <article class="card">
-          <div class="media">
-            <!-- Update the src to your file path -->
-            <video controls preload="metadata" src="assets/media/clip-1.mp4"></video>
-          </div>
-          <h3>Short reel</h3>
-          <p>Fifteen seconds focused on pacing and mood.</p>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="card">
-          <div class="media">
-            <img src="assets/img/latte.jpg" alt="Pouring a latte" loading="lazy">
-          </div>
-          <h3>Café story</h3>
-          <p>Warm color work for a local brand.</p>
-        </article>
-
-        <!-- Card 3 (optional) -->
-        <article class="card">
-          <div class="media">
-            <img src="assets/img/portrait.jpg" alt="Outdoor portrait" loading="lazy">
-          </div>
-          <h3>Portrait set</h3>
-          <p>Natural light portraits with soft edits.</p>
-        </article>
-
-        <!-- Card 4 (optional) -->
-        <article class="card">
-          <div class="media">
-            <video controls preload="metadata" src="assets/media/clip-2.mp4"></video>
-          </div>
-          <h3>Event moments</h3>
-          <p>Quick cuts that highlight energy and people.</p>
-        </article>
+      <h2 class="section-title center">Approach</h2>
+      <div class="features">
+        <div class="feature"><h3>Listen first</h3><p>Understand goals, audience, and constraints.</p></div>
+        <div class="feature"><h3>Build simply</h3><p>Choose the smallest effective solution.</p></div>
+        <div class="feature"><h3>Measure lightly</h3><p>Track a few useful metrics and iterate.</p></div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="year"></span> Jillian Grace Bent</small>
-    </div>
+    <div class="container"><small>© <span id="year"></span> Jillian Grace Bent</small></div>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
-
 </body>
 </html>
