@@ -84,3 +84,89 @@ a{ text-decoration-thickness: 1px; text-underline-offset: 3px; }
   .features{ grid-template-columns: 1fr; }
   .feature + .feature{ border-left: 0; border-top: 1px solid var(--line); }
 }
+/* ===== JPM-style typography ===== */
+:root{
+  --h-serif: 'Playfair Display', serif;
+  --body-sans: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+body{ font-family: var(--body-sans); letter-spacing: 0; }
+
+.hero-title, h1{
+  font-family: var(--h-serif);
+  font-weight: 500;
+  letter-spacing: -.01em;
+  font-size: clamp(2.75rem, 6vw, 4.25rem);
+  line-height: 1.1;
+  margin: 0 0 0.75rem;
+}
+h2.section-title{
+  font-family: var(--h-serif);
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--ink);
+}
+
+/* ===== Panels, dividers, cards ===== */
+.panel{
+  background: #EAE6DF;              /* soft tan panel */
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.divider{ height: 1px; background: var(--line); margin: 2rem 0; }
+
+.card-flat{
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+}
+
+/* ===== Pill button ===== */
+.btn-pill{
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .75rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #DFE6EC00;           /* transparent by default */
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn-pill:hover{ background: rgba(0,0,0,.06); text-decoration: none; }
+.btn-pill .arrow{ font-size: 1.1rem; line-height: 1; }
+
+/* ===== Feature grid with vertical separators ===== */
+.features{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;                           /* separators handle the rhythm */
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-elev);
+}
+.feature{
+  padding: 1.6rem 1.4rem;
+}
+.feature + .feature{ border-left: 1px solid var(--line); }
+.feature h3{
+  margin: 0 0 .4rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.feature p{ margin: 0; color: var(--muted); }
+
+/* ===== Spacing to get that airy feel ===== */
+.hero{ padding: 4.5rem 1.5rem; }    /* a bit taller */
+.section{ padding: 3.5rem 0; }
+
+/* ===== Subtle link underline like JPM ===== */
+a{ text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px){
+  .features{ grid-template-columns: 1fr; }
+  .feature + .feature{ border-left: 0; border-top: 1px solid var(--line); }
+}
