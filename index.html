@@ -1,62 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jillian Bent</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jillian Bent | Home</title>
+  <meta name="description" content="Storyteller, designer, and creative spirit. Explore my visual world and offerings.">
+  <link rel="stylesheet" href="style.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/img/favicon.png">
 </head>
 <body>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">home</a></li>
-      <li><a href="about.html">about</a></li>
-      <li><a href="services.html">services</a></li>
-      <li><a href="contact.html">contact</a></li>
-    </ul>
-  </nav>
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="index.html" class="active">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="services.html">services</a></li>
+        <li><a href="portfolio.html">portfolio</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <section class="hero">
-    <h1>hi, I'm Jillian</h1>
-    <p>Storyteller, designer, and creative spirit. Scroll down to explore my visual world — each piece leads to a project or offering.</p>
-  </section>
+  <!-- Main -->
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero center">
+      <h1>hi, I'm Jillian</h1>
+      <p>Storyteller, designer, and creative spirit. Scroll down to explore my visual world, each piece leads to a project or offering.</p>
+    </section>
 
-  <section class="media-gallery">
-    <h2>Creative Work</h2>
-    <div class="media-grid">
-      <a href="services.html#videoediting">
-        <video controls>
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-        </video>
-      </a>
-      <a href="services.html#branding">
-        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80" alt="Branding Work" />
-      </a>
-      <a href="services.html#content">
-        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80" alt="Content Creation" />
-      </a>
+    <!-- Creative Work -->
+    <section class="section">
+      <h2 class="section-title">Creative Work</h2>
+
+      <div class="grid">
+        <!-- Card 1 -->
+        <article class="card">
+          <div class="media">
+            <!-- Replace src with your actual clip -->
+            <video controls preload="metadata">
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h3>Short reel</h3>
+          <p>Fifteen seconds focused on pacing and mood.</p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <div class="media">
+            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=1200&q=80" alt="Branding work example" loading="lazy">
+          </div>
+          <h3>Branding work</h3>
+          <p>Identity touches and consistent visual language.</p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <div class="media">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=80" alt="Content creation example" loading="lazy">
+          </div>
+          <h3>Content creation</h3>
+          <p>Photo sets and short edits for social.</p>
+        </article>
+      </div>
+
+      <p class="center" style="margin-top:1rem;color:var(--muted);">Each piece links to a story or offering, click to explore.</p>
+    </section>
+
+    <!-- Instagram embeds -->
+    <section class="section center" aria-label="Instagram posts">
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/p/C9L_1BCOo10/"
+        data-instgrm-version="14"
+        style="width:100%; max-width:540px; margin: 2rem auto;">
+      </blockquote>
+
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/p/DKku0QZyf93/"
+        data-instgrm-version="14"
+        style="width:100%; max-width:540px; margin: 2rem auto;">
+      </blockquote>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Jillian Grace Bent</small>
     </div>
-
-    <p class="gallery-note">Each piece links to a story or offering — click to explore.</p>
-
-    <!-- Instagram Embed 1 -->
-    <blockquote class="instagram-media"
-      data-instgrm-permalink="https://www.instagram.com/p/C9L_1BCOo10/"
-      data-instgrm-version="14"
-      style="width:100%; max-width:540px; margin: 2rem auto;">
-    </blockquote>
-
-    <!-- Instagram Embed 2 -->
-    <blockquote class="instagram-media"
-      data-instgrm-permalink="https://www.instagram.com/p/DKku0QZyf93/"
-      data-instgrm-version="14"
-      style="width:100%; max-width:540px; margin: 2rem auto;">
-    </blockquote>
-  </section>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
 
   <script async src="//www.instagram.com/embed.js"></script>
-
 </body>
 </html>
