@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jillian Bent | Home</title>
   <meta name="description" content="Storyteller, designer, and creative spirit. Explore my visual world and offerings.">
-  <link rel="stylesheet" href="style.css?v=2">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=3">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/img/favicon.png">
 </head>
 <body>
@@ -28,8 +28,8 @@
   <main class="container">
     <!-- Hero -->
     <section class="hero center">
-      <h1>hi, I'm Jillian</h1>
-      <p>Storyteller, designer, and creative spirit. Scroll down to explore my visual world, each piece leads to a project or offering.</p>
+      <h1 class="hero-title">hi, I'm Jillian</h1>
+      <p class="hero-subtitle">Storyteller, designer, and creative spirit. Scroll to explore my visual world. Each piece leads to a project or offering.</p>
     </section>
 
     <!-- Creative Work -->
@@ -37,21 +37,17 @@
       <h2 class="section-title">Creative Work</h2>
 
       <div class="grid">
-        <!-- Card 1 -->
-        <article class="card">
+        <article class="card card-hover">
           <div class="media">
-            <!-- Replace src with your actual clip -->
-            <video controls preload="metadata">
+            <video controls preload="metadata" poster="assets/img/video-poster.jpg">
               <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-              Your browser does not support the video tag.
             </video>
           </div>
           <h3>Short reel</h3>
           <p>Fifteen seconds focused on pacing and mood.</p>
         </article>
 
-        <!-- Card 2 -->
-        <article class="card">
+        <article class="card card-hover">
           <div class="media">
             <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=1200&q=80" alt="Branding work example" loading="lazy">
           </div>
@@ -59,8 +55,7 @@
           <p>Identity touches and consistent visual language.</p>
         </article>
 
-        <!-- Card 3 -->
-        <article class="card">
+        <article class="card card-hover">
           <div class="media">
             <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=80" alt="Content creation example" loading="lazy">
           </div>
@@ -69,7 +64,7 @@
         </article>
       </div>
 
-      <p class="center" style="margin-top:1rem;color:var(--muted);">Each piece links to a story or offering, click to explore.</p>
+      <p class="center gallery-note">Each piece links to a story or offering, click to explore.</p>
     </section>
 
     <!-- Instagram embeds -->
@@ -99,3 +94,4 @@
   <script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>
+
