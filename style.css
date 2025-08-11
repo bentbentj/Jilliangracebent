@@ -1,13 +1,13 @@
 /* ===== Theme tokens ===== */
 :root{
-  --bg:        #F5F4F1;   /* paper */
-  --bg-elev:   #FFFFFF;   /* white */
-  --ink:       #222222;   /* primary text */
-  --muted:     #6B6B6B;   /* secondary text */
-  --line:      #E6E3DE;   /* subtle border */
-  --accent:    #B8B3A7;   /* warm stone */
-  --accent-ink:#1D1D1D;   /* readable on accent */
-  --link:      #6E7B5C;   /* sage */
+  --bg:        #F4F1EC;   /* light tan background */
+  --bg-elev:   #FFFFFF;   /* white cards, header */
+  --ink:       #1A1A1A;   /* near black text */
+  --muted:     #5E5E5E;   /* mid grey for secondary text */
+  --line:      #D8D5CF;   /* light grey/tan border */
+  --accent:    #B2A895;   /* muted warm tan */
+  --accent-ink:#111111;   /* text on accent */
+  --link:      #2F2F2F;   /* dark grey for links/buttons */
 }
 
 /* ===== Base reset ===== */
@@ -45,18 +45,18 @@ a:hover{ text-decoration: underline; }
   display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap;
 }
 .nav-list a{
-  color: #6E7B5C; font-weight: 600;
+  color: var(--link); font-weight: 600;
   padding: .42rem .7rem; border-radius: 10px;
   text-decoration: none;
 }
 .nav-list a:hover,
 .nav-list a.active{
-  background: rgba(110,123,92,.12);
+  background: rgba(0,0,0,.08);
 }
 
 /* ===== Hero ===== */
 .hero{
-  background: #EFEAE6;              /* soft neutral */
+  background: #EAE6DF;              /* soft tan */
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 3rem 1.5rem;
@@ -69,7 +69,7 @@ a:hover{ text-decoration: underline; }
 h2.section-title{
   font-size: 1.8rem;
   margin: 0 0 1.2rem;
-  color: #6E7B5C;
+  color: var(--link);
   text-align: center;
 }
 
@@ -122,7 +122,6 @@ h2.section-title{
   border: 1px solid var(--line);
   border-radius: 12px;
   overflow: hidden;
-  /* true square, supported broadly */
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
