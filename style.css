@@ -183,4 +183,23 @@ h2.section-title{
   .grid{ grid-template-columns: 1fr; }
   .nav-list{ gap: .8rem; }
 }
+.t-slider{ position: relative; overflow: hidden; }
+.t-track{
+  display: flex; transition: transform .3s ease; will-change: transform;
+}
+.t-slide{
+  min-width: 100%;
+  padding: 1.2rem 1.4rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.t-prev,.t-next{
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(0,0,0,.06); border: 1px solid var(--line);
+  border-radius: 999px; width: 36px; height: 36px;
+  display: grid; place-items: center; cursor: pointer;
+}
+.t-prev{ left: .4rem; } .t-next{ right: .4rem; }
+.t-prev:hover,.t-next:hover{ background: rgba(0,0,0,.1); }
 
