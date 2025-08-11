@@ -1,32 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Jillian Grace Bent</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Jillian Bent</title>
+  <meta name="description" content="Say hello and start a project." />
+  <link rel="stylesheet" href="style.css?v=7" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html">home</a></li>
-      <li><a href="about.html">about</a></li>
-      <li><a href="services.html">services</a></li>
-      <li><a href="contact.html">contact</a></li>
-    </ul>
-  </nav>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="services.html">services</a></li>
+        <li><a href="portfolio.html">portfolio</a></li>
+        <li><a href="contact.html" class="active">contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <section class="hero">
-    <h1>let's connect</h1>
-    <p>I'd love to hear about your project, your story, or just what’s on your mind. Feel free to reach out below or DM me on Instagram.</p>
-  </section>
+  <main class="container">
+    <section class="hero center">
+      <h1 class="hero-title">Contact</h1>
+      <p class="hero-subtitle" style="max-width:60ch;margin:0 auto;">
+        Email <a href="mailto:jilliangbent@gmail.com">jilliangbent@gmail.com</a> or DM <a href="https://instagram.com/jilliangracebent">instagram.com/jilliangracebent</a>.
+      </p>
+    </section>
 
-  <section class="about-content">
-    <div class="bio">
-      <p><strong>Email:</strong> <a href="mailto:jilliangbent@gmail.com">jilliangbent@gmail.com</a></p>
-      <p><strong>Instagram:</strong> <a href="https://instagram.com/jilliangracebent" target="_blank">@jilliangracebent</a></p>
-      <p><em>More coming soon, including a calendar to book time directly with me.</em></p>
-    </div>
-  </section>
+    <!-- Optional Formspree form -->
+    <!--
+    <section class="section center">
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="max-width:520px;margin:0 auto;text-align:left;">
+        <label>Name<br><input type="text" name="name" required style="width:100%;padding:.6rem;border:1px solid var(--line);border-radius:8px;"></label><br><br>
+        <label>Email<br><input type="email" name="email" required style="width:100%;padding:.6rem;border:1px solid var(--line);border-radius:8px;"></label><br><br>
+        <label>Message<br><textarea name="message" rows="5" required style="width:100%;padding:.6rem;border:1px solid var(--line);border-radius:8px;"></textarea></label><br><br>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </section>
+    -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><small>© <span id="year"></span> Jillian Grace Bent</small></div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
 </body>
 </html>
