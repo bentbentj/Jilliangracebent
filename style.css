@@ -223,3 +223,11 @@ h2.section-title{
 .portfolio-grid img:hover {
     transform: scale(1.05);
 }
+/* Zoom / fill a specific gallery image (override the default contain) */
+.grid-3x4 .tile > img.fill,
+.grid-3x4 .tile.fill > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* fills the tile, crops overflow */
+  object-position: center;
+}
