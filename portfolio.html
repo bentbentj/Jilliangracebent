@@ -1,100 +1,98 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio | Jillian Bent</title>
-  <meta name="description" content="A quick look at some of my past projects and clients I have worked with." />
-  <link rel="stylesheet" href="style.css?v=15" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Jillian Grace Bent</title>
+  <link rel="stylesheet" href="portfolio.css" />
 </head>
-
 <body>
-  <!-- Sticky header / nav -->
+
+  <!-- Header / Nav -->
   <header class="site-header">
     <nav class="nav container" aria-label="Primary">
       <ul class="nav-list">
         <li><a href="index.html">Home</a></li>
-        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="container">
-    <!-- Hero -->
-    <section class="hero">
-      <h1 class="hero-title">My Portfolio of Past Work</h1>
-      <p class="hero-subtitle">A quick look at some of my past projects and clients I have worked with</p>
-    </section>
+  <!-- Page Intro -->
+  <section class="intro-section">
+    <h1>My Portfolio of Past Work</h1>
+    <p>A quick look at some of my past projects and clients I have worked with</p>
+  </section>
 
-   <section class="section">
-  <h2 class="section-title center">Projects</h2>
-  <div class="projects-row">
-    <a class="project-card" href="badbeansnyc.html">
-      <h3>BadBeansNYC</h3>
-      <p>Brand content and social edits</p>
-    </a>
-    <a class="project-card" href="sharonsprings.html">
-      <h3>Sharon Springs Harvest Festival</h3>
-      <p>Photo set + vertical reels</p>
-    </a>
-    <a class="project-card" href="eyeseemenyc.html">
-      <h3>Eye See Me NYC</h3>
-      <p>Lookbook & short-form video</p>
-    </a>
+  <!-- Projects -->
+  <section class="section">
+    <h2>Projects</h2>
+    <div class="grid-3 project-row">
+      <article class="card project-card">
+        <h3>BadBeansNYC</h3>
+        <p>Streetwear pop-ups, photo sets, and social launch assets.</p>
+        <a class="btn-pill" href="badbeans.html">View project →</a>
+      </article>
+      <article class="card project-card">
+        <h3>Sharon Springs Harvest Festival</h3>
+        <p>Festival coverage, vendor highlights, and short vertical edits.</p>
+        <a class="btn-pill" href="harvest-festival.html">View project →</a>
+      </article>
+      <article class="card project-card">
+        <h3>Eye See Me NYC</h3>
+        <p>Product storytelling, brand identity, and Instagram reels.</p>
+        <a class="btn-pill" href="eyeseeme.html">View project →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Clients -->
+  <section class="section">
+    <h2>Clients</h2>
+    <h3>Black Cat Cafe</h3>
+
+    <!-- Gallery -->
+    <div class="grid-3x4">
+      <div class="tile"><img src="closeCroissants.JPG" alt=""></div>
+      <div class="tile"><img src="balsamics.jpg" alt=""></div>
+      <div class="tile"><img src="fruitcakeSlices.JPG" alt=""></div>
+      <div class="tile"><img src="grapeLeaves.jpeg" alt=""></div>
+      <div class="tile"><img src="artOnWall.JPG" alt=""></div>
+      <div class="tile"><img src="sandwich.jpg" alt=""></div>
+      <div class="tile"><img src="croissantDrink.jpg" alt=""></div>
+      <div class="tile"><img src="windowSeat.JPG" alt=""></div>
+      <div class="tile"><img src="fruitcakes.JPG" alt=""></div>
+      <div class="tile"><img src="BlackCatExterior.JPG" alt=""></div>
+      <div class="tile"><img src="mochaVideoPic.jpeg" alt=""></div>
+      <div class="tile"><img src="cafeVideoPic.jpeg" alt=""></div>
+    </div>
+    <p class="gallery-tip">Tip: click the last three images to watch the Instagram videos.</p>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
   </div>
-</section>
 
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".close");
 
-    <!-- Clients -->
-    <section class="section">
-      <h2 class="section-title">Clients</h2>
+    document.querySelectorAll(".tile img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "block";
+        lightboxImg.src = img.src;
+      });
+    });
 
-      <h3 class="client-title">Black Cat Cafe</h3>
+    closeBtn.onclick = () => { lightbox.style.display = "none"; };
+    window.onclick = (e) => { if (e.target === lightbox) lightbox.style.display = "none"; };
+  </script>
 
-      <!-- 3 × 4 gallery: row 1 (vertical), row 2 (horizontal), row 3 (horizontal), row 4 (vertical IG links) -->
-      <div class="grid-3x4">
-        <!-- Row 1 (vertical) -->
-        <figure class="tile v"><img src="assets/img/closeCroissants.JPG" alt="Croissants close up"></figure>
-        <figure class="tile v"><img src="assets/img/balsamics.jpg" alt="Balsamic bottles"></figure>
-        <figure class="tile v"><img src="assets/img/fruitcakeSlices.JPG" alt="Fruitcake slices"></figure>
-
-        <!-- Row 2 (horizontal) -->
-        <figure class="tile h"><img src="assets/img/grapeLeaves.jpeg" alt="Grape leaves dish"></figure>
-        <figure class="tile h"><img src="assets/img/artOnWall.JPG" alt="Art on café wall"></figure>
-        <figure class="tile h"><img src="assets/img/thanksgiving.jpeg" alt="Thanksgiving spread"></figure>
-
-        <!-- Row 3 (horizontal) -->
-        <figure class="tile h"><img src="assets/img/CroissantAndIcedCoffee.jpg" alt="Croissant and iced coffee"></figure>
-        <figure class="tile h"><img src="assets/img/windowSeat.JPG" alt="Window seating area"></figure>
-        <figure class="tile h"><img src="assets/img/fruitcakes.JPG" alt="Wrapped fruitcakes"></figure>
-
-        <!-- Row 4 (vertical; each opens Instagram in a new tab) -->
-        <a class="tile v" href="https://www.instagram.com/p/DIWu6zSuDc2/" target="_blank" rel="noopener">
-          <img src="assets/img/BlackCatExterior.JPG" alt="Black Cat exterior (video)">
-        </a>
-        <a class="tile v" href="https://www.instagram.com/p/DIMCtPbuU-m/" target="_blank" rel="noopener">
-          <img src="assets/img/mochaVideoPic.jpeg" alt="Mocha video thumbnail">
-        </a>
-        <a class="tile v" href="https://www.instagram.com/p/DJWtx8HubbA/" target="_blank" rel="noopener">
-          <img src="assets/img/cafeVideoPic.jpeg" alt="Cafe video thumbnail">
-        </a>
-      </div>
-
-      <p class="center" style="margin-top:.6rem;color:#5E5E5E;">
-        Tip: click the last three images to watch the Instagram videos.
-      </p>
-
-      <h3 class="client-title" style="margin-top:2.2rem;">Empty Pockets Ranch</h3>
-      <p style="color:#5E5E5E;">(Add images or a short note about this client here.)</p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container"><small>© <span id="year"></span> Jillian Grace Bent</small></div>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-  </footer>
 </body>
 </html>
