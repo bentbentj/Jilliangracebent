@@ -1,11 +1,11 @@
 /* ===== Theme tokens ===== */
-:root {
-  --bg:        #F4F1EC;   /* page background */
+:root{
+  --bg:        #F4F1EC;   /* page background (light tan) */
   --bg-elev:   #FFFFFF;   /* cards, header */
   --ink:       #1A1A1A;   /* near black text */
   --muted:     #5E5E5E;   /* secondary text */
   --line:      #D8D5CF;   /* subtle border */
-  --link:      #2F2F2F;   /* link/button */
+  --link:      #2F2F2F;   /* dark grey link/button */
   --h-serif:   'Playfair Display', serif;
   --body-sans: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
@@ -14,93 +14,181 @@
 *,
 *::before,
 *::after { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; }
-body {
+html, body { height: 100%; }
+body{
+  margin: 0;
   font-family: var(--body-sans);
   line-height: 1.6;
   color: var(--ink);
   background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-img { max-width: 100%; height: auto; display: block; }
-a { color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-a:hover { text-decoration: none; }
+img{ max-width:100%; height:auto; display:block; }
+a{ color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover{ text-decoration: none; }
 
 /* ===== Layout helpers ===== */
-.container { width: min(1040px, 92%); margin: 0 auto; }
-.section { padding: 3.5rem 0; }
-.center { text-align: center; }
+.container{ width: min(1040px, 92%); margin: 0 auto; }
+.section{ padding: 3.5rem 0; }
+.center{ text-align: center; }
+
+/* ===== Header and nav ===== */
+.site-header{
+  position: sticky; top: 0; z-index: 10;
+  background: var(--bg-elev);
+  border-bottom: 1px solid var(--line);
+}
+.nav{ display: flex; align-items: center; justify-content: center; }
+.nav-list{
+  list-style: none; margin: 0; padding: .9rem 0;
+  display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap;
+}
+.nav-list a{
+  color: var(--link); font-weight: 600;
+  padding: .42rem .7rem; border-radius: 999px;
+  text-decoration: none;
+}
+.nav-list a:hover,
+.nav-list a.active{ background: rgba(0,0,0,.08); }
+
+/* Fallback if classes go missing */
+header nav ul{ list-style: none; margin: 0; padding: .9rem 0; display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+header nav a{ color: var(--link); font-weight: 600; padding: .42rem .7rem; border-radius: 999px; text-decoration: none; }
+header nav a:hover, header nav a.active{ background: rgba(0,0,0,.08); }
+
+/* ===== Hero / panel ===== */
+.hero{
+  background: #EAE6DF;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 4.5rem 1.5rem;
+  margin: 1.5rem auto 2rem;
+}
+.hero-title, h1{
+  font-family: var(--h-serif);
+  font-weight: 500;
+  letter-spacing: -.01em;
+  font-size: clamp(2.75rem, 6vw, 4.25rem);
+  line-height: 1.1;
+  margin: 0 0 .75rem;
+}
+.hero-subtitle{ font-size: 1.1rem; color: var(--muted); }
 
 /* ===== Section headings ===== */
-h2.section-title {
+h2.section-title{
   font-family: var(--h-serif);
   font-weight: 500;
   font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
   margin: 0 0 1.2rem;
   color: var(--ink);
 }
 
-/* ===== Black Cat 3×4 gallery (no crop for verticals) ===== */
-.grid-3x4 {
+/* ===== Generic card grids ===== */
+/* 2-up default grid used on many pages */
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+/* 3-up utility (projects row, small client blocks) */
+.grid-3{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
 }
-.tile {
+
+.card{
   background: var(--bg-elev);
   border: 1px solid var(--line);
   border-radius: 12px;
-  overflow: hidden;
-  transition: transform .2s ease, box-shadow .2s ease;
-  cursor: pointer;
-}
-.tile:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
-}
-.tile.v { height: auto; }
-.tile.h { height: auto; }
-.tile img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 10px;
-}
-
-/* ===== Lightbox styles ===== */
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
   padding: 1rem;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
+.card:hover{ transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+.card h3{ margin: 0 0 .4rem; font-size: 1.1rem; }
+.card p{ margin: 0 0 .6rem; color: var(--muted); }
+.media{ border-radius: 10px; overflow: hidden; }
+.media img{ border-radius: 8px; object-fit: cover; }
+
+/* ===== Feature trio with separators ===== */
+.features{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-elev);
 }
-.lightbox.active { display: flex; }
-.lightbox:after {
-  content: "×";
-  position: absolute;
-  top: 20px; right: 30px;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
+.feature{ padding: 1.6rem 1.4rem; }
+.feature + .feature{ border-left: 1px solid var(--line); }
+.feature h3{ margin: 0 0 .4rem; font-size: 1.2rem; font-weight: 700; }
+.feature p{ margin: 0; color: var(--muted); }
+
+/* ===== Timeline (kept for consistency) ===== */
+.timeline{ list-style: none; margin: 0; padding: 0 0 0 1rem; border-left: 2px solid var(--line); }
+.t-item{ position: relative; padding: 0 0 1.2rem 1.2rem; }
+.t-item::before{
+  content: ""; position: absolute; left: -8px; top: .25rem;
+  width: 10px; height: 10px; background: var(--link); border-radius: 50%;
+}
+.t-header{ display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.t-header h3{ margin: 0; font-size: 1.1rem; }
+.t-meta{ color: var(--muted); font-size: .95rem; }
+.t-points{ margin: .4rem 0 0 0; }
+.t-points li{ margin: .25rem 0; }
+
+/* ===== Buttons ===== */
+.btn{ display: inline-block; padding: .7rem 1rem; background: var(--link); color: #fff; border-radius: 10px; border: 0; font-weight: 600; }
+.btn:hover{ filter: brightness(.95); }
+.btn-pill{
+  display: inline-flex; align-items: center; gap: .45rem;
+  padding: .75rem 1.1rem; border-radius: 999px; border: 1px solid var(--line);
+  background: transparent; color: var(--ink); text-decoration: none; font-weight: 600;
+}
+.btn-pill:hover{ background: rgba(0,0,0,.06); text-decoration: none; }
+.btn-pill .arrow{ font-size: 1.1rem; line-height: 1; }
+
+/* ===== Footer ===== */
+.site-footer{
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+  text-align: center;
 }
 
-/* ===== Responsive adjustments ===== */
-@media (max-width: 1000px) {
-  .grid-3x4 { gap: 1rem; }
+/* ===== Services: perfect squares ===== */
+.srv-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.srv-card{
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  aspect-ratio: 1 / 1;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 1rem;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-@media (max-width: 760px) {
-  .grid-3x4 { grid-template-columns: repeat(2, 1fr); }
+.srv-card:hover{ transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+.srv-card h3{ margin: 0 0 .3rem; }
+.srv-card p{ margin: 0; color: var(--muted); font-size: .95rem; }
+
+/* Fallback for very old browsers without aspect-ratio */
+@supports not (aspect-ratio: 1 / 1){
+  .srv-card::before{ content: ""; float: left; padding-top: 100%; }
+  .srv-card > *{ position: relative; z-index: 1; }
 }
-@media (max-width: 520px) {
-  .grid-3x4 { grid-template-columns: 1fr; }
+
+/* ===== Black Cat 3×4 gallery (no crop, stable layout) ===== */
+.grid-3x4{
+  --rowH-vert: 360px;   /* top & bottom rows */
+  --rowH-horz: 240px;   /* middle two rows */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
 }
+.tile{
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
