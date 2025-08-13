@@ -1,82 +1,36 @@
-/* ===== Theme Tokens ===== */
+/* ===== Theme tokens ===== */
 :root {
-  --bg:        #F4F1EC;   
-  --bg-elev:   #FFFFFF;   
-  --ink:       #1A1A1A;   
-  --muted:     #5E5E5E;   
-  --line:      #D8D5CF;   
-  --link:      #2F2F2F;   
+  --bg:        #F4F1EC;   /* page background */
+  --bg-elev:   #FFFFFF;   /* cards, header */
+  --ink:       #1A1A1A;   /* near black text */
+  --muted:     #5E5E5E;   /* secondary text */
+  --line:      #D8D5CF;   /* subtle border */
+  --link:      #2F2F2F;   /* link/button */
   --h-serif:   'Playfair Display', serif;
   --body-sans: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* ===== Base Reset ===== */
+/* ===== Base reset ===== */
 *,
 *::before,
 *::after { box-sizing: border-box; }
-html, body { height: 100%; }
+html, body { height: 100%; margin: 0; }
 body {
-  margin: 0;
   font-family: var(--body-sans);
   line-height: 1.6;
   color: var(--ink);
   background: var(--bg);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 img { max-width: 100%; height: auto; display: block; }
-a {
-  color: var(--link);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
+a { color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:hover { text-decoration: none; }
 
-/* ===== Layout ===== */
+/* ===== Layout helpers ===== */
 .container { width: min(1040px, 92%); margin: 0 auto; }
 .section { padding: 3.5rem 0; }
 .center { text-align: center; }
-.muted { color: var(--muted); }
 
-/* ===== Header ===== */
-.site-header {
-  position: sticky; top: 0; z-index: 10;
-  background: var(--bg-elev);
-  border-bottom: 1px solid var(--line);
-}
-.nav { display: flex; align-items: center; justify-content: center; }
-.nav-list {
-  list-style: none; margin: 0; padding: .9rem 0;
-  display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center;
-}
-.nav-list a {
-  color: var(--link); font-weight: 600;
-  padding: .42rem .7rem; border-radius: 999px;
-  text-decoration: none;
-}
-.nav-list a:hover,
-.nav-list a.active { background: rgba(0,0,0,.08); }
-
-/* ===== Hero ===== */
-.hero {
-  background: #EAE6DF;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 4.5rem 1.5rem;
-  margin: 1.5rem auto 2rem;
-}
-.hero-title, h1 {
-  font-family: var(--h-serif);
-  font-weight: 500;
-  letter-spacing: -.01em;
-  font-size: clamp(2.75rem, 6vw, 4.25rem);
-  line-height: 1.1;
-  margin: 0 0 .75rem;
-}
-.hero-subtitle { font-size: 1.1rem; color: var(--muted); }
-
-/* ===== Section Titles ===== */
+/* ===== Section headings ===== */
 h2.section-title {
   font-family: var(--h-serif);
   font-weight: 500;
@@ -85,30 +39,8 @@ h2.section-title {
   color: var(--ink);
 }
 
-/* ===== Generic Grid ===== */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
-}
-.card {
-  background: var(--bg-elev);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 1rem;
-  text-align: center;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
-}
-.card h3 { margin: 0; font-size: 1.1rem; }
-
-/* ===== 3×4 Gallery ===== */
+/* ===== Black Cat 3×4 gallery (no crop for verticals) ===== */
 .grid-3x4 {
-  --rowH-vert: 360px;   
-  --rowH-horz: 240px;   
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
@@ -117,80 +49,58 @@ h2.section-title {
   background: var(--bg-elev);
   border: 1px solid var(--line);
   border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
   overflow: hidden;
   transition: transform .2s ease, box-shadow .2s ease;
+  cursor: pointer;
 }
 .tile:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0,0,0,.08);
 }
-.tile.v { height: var(--rowH-vert); }
-.tile.h { height: var(--rowH-horz); }
-
-/* Keep full image visible for verticals */
-.tile.v img {
+.tile.v { height: auto; }
+.tile.h { height: auto; }
+.tile img {
   width: 100%;
   height: auto;
   object-fit: contain;
   border-radius: 10px;
 }
-.tile.h img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
 
-/* ===== Lightbox ===== */
+/* ===== Lightbox styles ===== */
 .lightbox {
   display: none;
   position: fixed;
-  z-index: 100;
-  padding-top: 50px;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.9);
+  z-index: 1000;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
-.lightbox-content {
-  margin: auto;
-  display: block;
+.lightbox img {
   max-width: 90%;
-  max-height: 80%;
+  max-height: 90%;
+  border-radius: 10px;
 }
-.close {
+.lightbox.active { display: flex; }
+.lightbox:after {
+  content: "×";
   position: absolute;
-  top: 20px;
-  right: 40px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
+  top: 20px; right: 30px;
+  font-size: 2rem;
+  color: white;
   cursor: pointer;
 }
 
-/* ===== Footer ===== */
-.site-footer {
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  padding: 1.5rem 0;
-  margin-top: 2rem;
-  text-align: center;
-}
-
-/* ===== Responsive ===== */
+/* ===== Responsive adjustments ===== */
 @media (max-width: 1000px) {
-  .grid { grid-template-columns: 1fr; }
   .grid-3x4 { gap: 1rem; }
-  .tile.v { height: 320px; }
-  .tile.h { height: 210px; }
 }
 @media (max-width: 760px) {
   .grid-3x4 { grid-template-columns: repeat(2, 1fr); }
-  .tile.v { height: 300px; }
-  .tile.h { height: 200px; }
 }
 @media (max-width: 520px) {
   .grid-3x4 { grid-template-columns: 1fr; }
-  .tile.v { height: auto; }
-  .tile.h { height: auto; }
 }
