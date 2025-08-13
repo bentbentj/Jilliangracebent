@@ -211,6 +211,3 @@ h2.section-title{
   .tile.v{ height: 360px; }
   .tile.h{ height: 240px; }
 }
-/* Space out the one-line project links */
-.proj-links a { margin-right: 1rem; }
-.proj-links a:last-child { margin-right: 0; }
