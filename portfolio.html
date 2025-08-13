@@ -1,86 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio | Jillian Bent</title>
+  <meta name="description" content="A quick look at some of my past projects and clients I have worked with." />
+  <link rel="stylesheet" href="style.css?v=15" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
+
 <body>
+  <!-- Sticky header / nav -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <h1 class="hero-title">My Portfolio of Past Work</h1>
+      <p class="hero-subtitle">A quick look at some of my past projects and clients I have worked with</p>
+    </section>
 
-<main class="portfolio-page">
-  <section>
-    <h1>My Portfolio of Past Work</h1>
-    <p>A quick look at some of my past projects and clients I have worked with</p>
-  </section>
+    <!-- Projects (inline links) -->
+    <section class="section">
+      <h2 class="section-title">Projects</h2>
+      <p class="proj-links">
+        <a href="badbeans.html">BadBeansNYC</a>
+        <a href="harvest-festival.html">Sharon Springs Harvest Festival</a>
+        <a href="eyeseemenyc.html">Eye See Me NYC</a>
+      </p>
+    </section>
 
-  <!-- Projects -->
-  <section>
-    <h2>Projects</h2>
-    <div class="projects-row">
-      <a href="badbeansnyc.html" class="project-link">BadBeansNYC</a>
-      <a href="sharonsprings.html" class="project-link">Sharon Springs Harvest Festival</a>
-      <a href="eyeseemenyc.html" class="project-link">Eye See Me NYC</a>
-    </div>
-  </section>
+    <!-- Clients -->
+    <section class="section">
+      <h2 class="section-title">Clients</h2>
 
-  <!-- Clients -->
-  <section>
-    <h2>Clients</h2>
+      <h3 class="client-title">Black Cat Cafe</h3>
 
-    <h3>Black Cat Cafe</h3>
-    <div class="grid-3">
-      <!-- Row 1 -->
-      <a href="assets/img/closeCroissants.JPG" class="lightbox"><img src="assets/img/closeCroissants.JPG" alt=""></a>
-      <a href="assets/img/balsamics.jpg" class="lightbox"><img src="assets/img/balsamics.jpg" alt=""></a>
-      <a href="assets/img/fruitcakeSlices.JPG" class="lightbox"><img src="assets/img/fruitcakeSlices.JPG" alt=""></a>
+      <!-- 3 × 4 gallery: row 1 (vertical), row 2 (horizontal), row 3 (horizontal), row 4 (vertical IG links) -->
+      <div class="grid-3x4">
+        <!-- Row 1 (vertical) -->
+        <figure class="tile v"><img src="assets/img/closeCroissants.JPG" alt="Croissants close up"></figure>
+        <figure class="tile v"><img src="assets/img/balsamics.jpg" alt="Balsamic bottles"></figure>
+        <figure class="tile v"><img src="assets/img/fruitcakeSlices.JPG" alt="Fruitcake slices"></figure>
 
-      <!-- Row 2 -->
-      <a href="assets/img/grapeLeaves.jpeg" class="lightbox"><img src="assets/img/grapeLeaves.jpeg" alt=""></a>
-      <a href="assets/img/artOnWall.JPG" class="lightbox"><img src="assets/img/artOnWall.JPG" alt=""></a>
-      <a href="assets/img/thanksgiving.jpeg" class="lightbox"><img src="assets/img/thanksgiving.jpeg" alt=""></a>
+        <!-- Row 2 (horizontal) -->
+        <figure class="tile h"><img src="assets/img/grapeLeaves.jpeg" alt="Grape leaves dish"></figure>
+        <figure class="tile h"><img src="assets/img/artOnWall.JPG" alt="Art on café wall"></figure>
+        <figure class="tile h"><img src="assets/img/thanksgiving.jpeg" alt="Thanksgiving spread"></figure>
 
-      <!-- Row 3 -->
-      <a href="assets/img/CroissantAndIcedCoffee.jpg" class="lightbox"><img src="assets/img/CroissantAndIcedCoffee.jpg" alt=""></a>
-      <a href="assets/img/windowSeat.JPG" class="lightbox"><img src="assets/img/windowSeat.JPG" alt=""></a>
-      <a href="assets/img/fruitcakes.JPG" class="lightbox"><img src="assets/img/fruitcakes.JPG" alt=""></a>
+        <!-- Row 3 (horizontal) -->
+        <figure class="tile h"><img src="assets/img/CroissantAndIcedCoffee.jpg" alt="Croissant and iced coffee"></figure>
+        <figure class="tile h"><img src="assets/img/windowSeat.JPG" alt="Window seating area"></figure>
+        <figure class="tile h"><img src="assets/img/fruitcakes.JPG" alt="Wrapped fruitcakes"></figure>
 
-      <!-- Row 4 (Instagram links, no lightbox) -->
-      <a href="https://www.instagram.com/p/DIWu6zSuDc2/" target="_blank"><img src="assets/img/BlackCatExterior.JPG" alt=""></a>
-      <a href="https://www.instagram.com/p/DIMCtPbuU-m/" target="_blank"><img src="assets/img/mochaVideoPic.jpeg" alt=""></a>
-      <a href="https://www.instagram.com/p/DJWtx8HubbA/" target="_blank"><img src="assets/img/cafeVideoPic.jpeg" alt=""></a>
-    </div>
-    <p class="ig-note">Click the images in the last row to view the videos on Instagram.</p>
+        <!-- Row 4 (vertical; each opens Instagram in a new tab) -->
+        <a class="tile v" href="https://www.instagram.com/p/DIWu6zSuDc2/" target="_blank" rel="noopener">
+          <img src="assets/img/BlackCatExterior.JPG" alt="Black Cat exterior (video)">
+        </a>
+        <a class="tile v" href="https://www.instagram.com/p/DIMCtPbuU-m/" target="_blank" rel="noopener">
+          <img src="assets/img/mochaVideoPic.jpeg" alt="Mocha video thumbnail">
+        </a>
+        <a class="tile v" href="https://www.instagram.com/p/DJWtx8HubbA/" target="_blank" rel="noopener">
+          <img src="assets/img/cafeVideoPic.jpeg" alt="Cafe video thumbnail">
+        </a>
+      </div>
 
-    <h3>Empty Pockets Ranch</h3>
-    <p>Coming soon...</p>
-  </section>
-</main>
+      <p class="center" style="margin-top:.6rem;color:#5E5E5E;">
+        Tip: click the last three images to watch the Instagram videos.
+      </p>
 
-<!-- Lightbox Script -->
-<script>
-document.querySelectorAll('.lightbox').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const overlay = document.createElement('div');
-    overlay.classList.add('lightbox-overlay');
-    overlay.innerHTML = `<img src="${this.href}" alt="">`;
-    overlay.addEventListener('click', () => document.body.removeChild(overlay));
-    document.body.appendChild(overlay);
-  });
-});
-</script>
+      <h3 class="client-title" style="margin-top:2.2rem;">Empty Pockets Ranch</h3>
+      <p style="color:#5E5E5E;">(Add images or a short note about this client here.)</p>
+    </section>
+  </main>
 
+  <footer class="site-footer">
+    <div class="container"><small>© <span id="year"></span> Jillian Grace Bent</small></div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
 </body>
 </html>
