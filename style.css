@@ -231,3 +231,9 @@ h2.section-title{
   object-fit: cover;     /* fills the tile, crops overflow */
   object-position: center;
 }
+img.fill {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
