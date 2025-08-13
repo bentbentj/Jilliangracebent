@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="assets/css/portfolio.css">
 </head>
 <body>
 
@@ -20,70 +20,71 @@
 </header>
 
 <main class="container">
-
-  <!-- Hero -->
-  <section class="section center">
+  <section class="hero center">
     <h1>My Portfolio of Past Work</h1>
-    <p>A quick look at some of my past projects and clients I have worked with</p>
+    <p class="hero-subtitle">A quick look at some of my past projects and clients I have worked with</p>
   </section>
 
-  <!-- Projects -->
+  <!-- Projects Section -->
   <section class="section">
     <h2 class="section-title">Projects</h2>
-    <div class="grid three-cols">
-      <div class="card">
-        <a href="badbeansnyc.html" style="text-decoration: none; color: inherit;">
-          <h3>BadBeansNYC</h3>
-          <p>Creative branding and media strategy for a NYC-based coffee business.</p>
-        </a>
-      </div>
-      <div class="card">
-        <a href="sharonsprings.html" style="text-decoration: none; color: inherit;">
-          <h3>Sharon Springs Harvest Festival</h3>
-          <p>Photography, content creation, and event coverage for a large seasonal festival.</p>
-        </a>
-      </div>
-      <div class="card">
-        <a href="eyeseemenyc.html" style="text-decoration: none; color: inherit;">
-          <h3>Eye See Me NYC</h3>
-          <p>Visual storytelling and digital marketing for an arts and culture initiative.</p>
-        </a>
-      </div>
+    <div class="grid">
+      <a href="badbeansnyc.html" class="card"><h3>BadBeansNYC</h3></a>
+      <a href="sharonsprings.html" class="card"><h3>Sharon Springs Harvest Festival</h3></a>
+      <a href="eyeseemenyc.html" class="card"><h3>Eye See Me NYC</h3></a>
     </div>
   </section>
 
-  <!-- Clients -->
+  <!-- Clients Section -->
   <section class="section">
     <h2 class="section-title">Clients</h2>
     <h3>Black Cat Cafe</h3>
+
+    <!-- Black Cat Gallery -->
     <div class="grid-3x4">
+
       <!-- Row 1 -->
-      <div class="tile h"><img src="assets/img/closeCroissants.JPG" alt="Close Croissants"></div>
-      <div class="tile h"><img src="assets/img/balsamics.jpg" alt="Balsamics"></div>
-      <div class="tile h"><img src="assets/img/fruitcakeSlices.JPG" alt="Fruitcake Slices"></div>
+      <div class="tile v"><img src="assets/img/closeCroissants.JPG" alt="Close Croissants"></div>
+      <div class="tile v"><img src="assets/img/balsamics.jpg" alt="Balsamics"></div>
+      <div class="tile v"><img src="assets/img/fruitcakeSlices.JPG" alt="Fruitcake Slices"></div>
+
       <!-- Row 2 -->
       <div class="tile h"><img src="assets/img/grapeLeaves.jpeg" alt="Grape Leaves"></div>
       <div class="tile h"><img src="assets/img/artOnWall.JPG" alt="Art on Wall"></div>
       <div class="tile h"><img src="assets/img/thanksgiving.jpeg" alt="Thanksgiving"></div>
+
       <!-- Row 3 -->
-      <div class="tile h"><img src="assets/img/CroissantAndIcedCoffee.jpg" alt="Croissant and Iced Coffee"></div>
+      <div class="tile h"><img src="assets/img/CroissantAndIcedCoffee.jpg" alt="Croissants and Iced Coffee"></div>
       <div class="tile h"><img src="assets/img/windowSeat.JPG" alt="Window Seat"></div>
       <div class="tile h"><img src="assets/img/fruitcakes.JPG" alt="Fruitcakes"></div>
-      <!-- Row 4 -->
-      <div class="tile v"><a href="https://www.instagram.com/p/DIWu6zSuDc2/" target="_blank"><img src="assets/img/BlackCatExterior.JPG" alt="Black Cat Exterior"></a></div>
-      <div class="tile v"><a href="https://www.instagram.com/p/DIMCtPbuU-m/" target="_blank"><img src="assets/img/mochaVideoPic.jpeg" alt="Mocha Video Pic"></a></div>
-      <div class="tile v"><a href="https://www.instagram.com/p/DJWtx8HubbA/" target="_blank"><img src="assets/img/cafeVideoPic.jpeg" alt="Cafe Video Pic"></a></div>
+
+      <!-- Row 4: Instagram Links -->
+      <a href="https://www.instagram.com/p/DIWu6zSuDc2/" target="_blank" class="tile v insta-link">
+        <img src="assets/img/BlackCatExterior.JPG" alt="Black Cat Exterior">
+      </a>
+      <a href="https://www.instagram.com/p/DIMCtPbuU-m/" target="_blank" class="tile v insta-link">
+        <img src="assets/img/mochaVideoPic.jpeg" alt="Mocha Video">
+      </a>
+      <a href="https://www.instagram.com/p/DJWtx8HubbA/" target="_blank" class="tile v insta-link">
+        <img src="assets/img/cafeVideoPic.jpeg" alt="Cafe Video">
+      </a>
+
     </div>
+    <p class="center muted" style="margin-top: 0.8rem;">
+      Click an image to view the Instagram video
+    </p>
 
-    <h3 style="margin-top: 3rem;">Empty Pockets Ranch</h3>
-    <p>Photography and event coverage for the Empty Pockets Ranch Sunflower Festival.</p>
+    <!-- Another Client -->
+    <h3 style="margin-top:2.5rem;">Empty Pockets Ranch</h3>
   </section>
-
 </main>
 
-<footer class="site-footer">
-  <p>&copy; 2025 Jillian Grace Bent. All rights reserved.</p>
-</footer>
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
 
+<script src="assets/js/lightbox.js"></script>
 </body>
 </html>
