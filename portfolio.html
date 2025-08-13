@@ -4,87 +4,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
-  <link rel="stylesheet" href="assets/css/portfolio.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="site-header">
-  <nav class="nav">
-    <ul class="nav-list">
+<header>
+  <nav>
+    <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<main class="container">
-  <section class="hero center">
+<main class="portfolio-page">
+  <section>
     <h1>My Portfolio of Past Work</h1>
-    <p class="hero-subtitle">A quick look at some of my past projects and clients I have worked with</p>
+    <p>A quick look at some of my past projects and clients I have worked with</p>
   </section>
 
-  <!-- Projects Section -->
-  <section class="section">
-    <h2 class="section-title">Projects</h2>
-    <div class="grid">
-      <a href="badbeansnyc.html" class="card"><h3>BadBeansNYC</h3></a>
-      <a href="sharonsprings.html" class="card"><h3>Sharon Springs Harvest Festival</h3></a>
-      <a href="eyeseemenyc.html" class="card"><h3>Eye See Me NYC</h3></a>
+  <!-- Projects -->
+  <section>
+    <h2>Projects</h2>
+    <div class="projects-row">
+      <a href="badbeansnyc.html" class="project-link">BadBeansNYC</a>
+      <a href="sharonsprings.html" class="project-link">Sharon Springs Harvest Festival</a>
+      <a href="eyeseemenyc.html" class="project-link">Eye See Me NYC</a>
     </div>
   </section>
 
-  <!-- Clients Section -->
-  <section class="section">
-    <h2 class="section-title">Clients</h2>
+  <!-- Clients -->
+  <section>
+    <h2>Clients</h2>
+
     <h3>Black Cat Cafe</h3>
-
-    <!-- Black Cat Gallery -->
-    <div class="grid-3x4">
-
+    <div class="grid-3">
       <!-- Row 1 -->
-      <div class="tile v"><img src="assets/img/closeCroissants.JPG" alt="Close Croissants"></div>
-      <div class="tile v"><img src="assets/img/balsamics.jpg" alt="Balsamics"></div>
-      <div class="tile v"><img src="assets/img/fruitcakeSlices.JPG" alt="Fruitcake Slices"></div>
+      <a href="assets/img/closeCroissants.JPG" class="lightbox"><img src="assets/img/closeCroissants.JPG" alt=""></a>
+      <a href="assets/img/balsamics.jpg" class="lightbox"><img src="assets/img/balsamics.jpg" alt=""></a>
+      <a href="assets/img/fruitcakeSlices.JPG" class="lightbox"><img src="assets/img/fruitcakeSlices.JPG" alt=""></a>
 
       <!-- Row 2 -->
-      <div class="tile h"><img src="assets/img/grapeLeaves.jpeg" alt="Grape Leaves"></div>
-      <div class="tile h"><img src="assets/img/artOnWall.JPG" alt="Art on Wall"></div>
-      <div class="tile h"><img src="assets/img/thanksgiving.jpeg" alt="Thanksgiving"></div>
+      <a href="assets/img/grapeLeaves.jpeg" class="lightbox"><img src="assets/img/grapeLeaves.jpeg" alt=""></a>
+      <a href="assets/img/artOnWall.JPG" class="lightbox"><img src="assets/img/artOnWall.JPG" alt=""></a>
+      <a href="assets/img/thanksgiving.jpeg" class="lightbox"><img src="assets/img/thanksgiving.jpeg" alt=""></a>
 
       <!-- Row 3 -->
-      <div class="tile h"><img src="assets/img/CroissantAndIcedCoffee.jpg" alt="Croissants and Iced Coffee"></div>
-      <div class="tile h"><img src="assets/img/windowSeat.JPG" alt="Window Seat"></div>
-      <div class="tile h"><img src="assets/img/fruitcakes.JPG" alt="Fruitcakes"></div>
+      <a href="assets/img/CroissantAndIcedCoffee.jpg" class="lightbox"><img src="assets/img/CroissantAndIcedCoffee.jpg" alt=""></a>
+      <a href="assets/img/windowSeat.JPG" class="lightbox"><img src="assets/img/windowSeat.JPG" alt=""></a>
+      <a href="assets/img/fruitcakes.JPG" class="lightbox"><img src="assets/img/fruitcakes.JPG" alt=""></a>
 
-      <!-- Row 4: Instagram Links -->
-      <a href="https://www.instagram.com/p/DIWu6zSuDc2/" target="_blank" class="tile v insta-link">
-        <img src="assets/img/BlackCatExterior.JPG" alt="Black Cat Exterior">
-      </a>
-      <a href="https://www.instagram.com/p/DIMCtPbuU-m/" target="_blank" class="tile v insta-link">
-        <img src="assets/img/mochaVideoPic.jpeg" alt="Mocha Video">
-      </a>
-      <a href="https://www.instagram.com/p/DJWtx8HubbA/" target="_blank" class="tile v insta-link">
-        <img src="assets/img/cafeVideoPic.jpeg" alt="Cafe Video">
-      </a>
-
+      <!-- Row 4 (Instagram links, no lightbox) -->
+      <a href="https://www.instagram.com/p/DIWu6zSuDc2/" target="_blank"><img src="assets/img/BlackCatExterior.JPG" alt=""></a>
+      <a href="https://www.instagram.com/p/DIMCtPbuU-m/" target="_blank"><img src="assets/img/mochaVideoPic.jpeg" alt=""></a>
+      <a href="https://www.instagram.com/p/DJWtx8HubbA/" target="_blank"><img src="assets/img/cafeVideoPic.jpeg" alt=""></a>
     </div>
-    <p class="center muted" style="margin-top: 0.8rem;">
-      Click an image to view the Instagram video
-    </p>
+    <p class="ig-note">Click the images in the last row to view the videos on Instagram.</p>
 
-    <!-- Another Client -->
-    <h3 style="margin-top:2.5rem;">Empty Pockets Ranch</h3>
+    <h3>Empty Pockets Ranch</h3>
+    <p>Coming soon...</p>
   </section>
 </main>
 
-<!-- Lightbox -->
-<div id="lightbox" class="lightbox">
-  <span class="close">&times;</span>
-  <img class="lightbox-content" id="lightbox-img">
-</div>
+<!-- Lightbox Script -->
+<script>
+document.querySelectorAll('.lightbox').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const overlay = document.createElement('div');
+    overlay.classList.add('lightbox-overlay');
+    overlay.innerHTML = `<img src="${this.href}" alt="">`;
+    overlay.addEventListener('click', () => document.body.removeChild(overlay));
+    document.body.appendChild(overlay);
+  });
+});
+</script>
 
-<script src="assets/js/lightbox.js"></script>
 </body>
 </html>
