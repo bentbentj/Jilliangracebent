@@ -264,4 +264,44 @@ h2.section-title{
 }
 .t-prev{ left: .4rem; } .t-next{ right: .4rem; }
 .t-prev:hover,.t-next:hover{ background: rgba(0,0,0,.1); }
+/* 3-column utility grid (matches .grid gap) */
+.grid-3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+/* Tile wrapper so images & videos share the same chrome */
+.tile{
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.tile:hover{ transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+
+/* Images: uniform 4:3 grid crop */
+.tile > img{
+  width: 100%; height: 100%;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover; object-position: center;
+}
+
+/* Videos: uniform 9:16 grid crop */
+.tile > video.portrait{
+  width: 100%; height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .grid-3{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px){
+  .grid-3{ grid-template-columns: 1fr; }
+}
 
