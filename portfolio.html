@@ -1,116 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio | Jillian Bent</title>
-  <meta name="description" content="Portfolio of past work and selected projects." />
-  <link rel="stylesheet" href="style.css?v=15" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header / Nav -->
-  <header class="site-header">
-    <nav class="nav container" aria-label="Primary">
-      <ul class="nav-list">
-        <li><a href="index.html">home</a></li>
-        <li><a href="about.html">about</a></li>
-        <li><a href="services.html">services</a></li>
-        <li><a href="portfolio.html" class="active">portfolio</a></li>
-        <li><a href="contact.html">contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main class="container">
-    <!-- Hero -->
-    <section class="hero center">
-      <h1 class="hero-title">My Portfolio of Past Work</h1>
-      <p class="hero-subtitle" style="max-width:70ch;margin:0 auto 1.25rem;">
-        A quick look at some of my past projects and clients I have worked with
-      </p>
-    </section>
+<header class="site-header">
+  <nav class="nav">
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <!-- Selected Projects (3 cards) -->
-    <section class="section" id="selected-projects">
-      <h2 class="section-title center">Selected Projects</h2>
-      <div class="grid">
-        <article class="card">
-          <div class="media">
-            <img src="assets/img/badbeansnyc.jpg" alt="BadBeansNYC project preview" loading="lazy">
-          </div>
+<main class="container">
+
+  <!-- Hero -->
+  <section class="section center">
+    <h1>My Portfolio of Past Work</h1>
+    <p>A quick look at some of my past projects and clients I have worked with</p>
+  </section>
+
+  <!-- Projects -->
+  <section class="section">
+    <h2 class="section-title">Projects</h2>
+    <div class="grid three-cols">
+      <div class="card">
+        <a href="badbeansnyc.html" style="text-decoration: none; color: inherit;">
           <h3>BadBeansNYC</h3>
-          <p>Creative direction, content production, and social media growth for a NYC-based coffee concept.</p>
-        </article>
-
-        <article class="card">
-          <div class="media">
-            <img src="assets/img/sharonsprings.jpg" alt="Sharon Springs Harvest Festival project preview" loading="lazy">
-          </div>
+          <p>Creative branding and media strategy for a NYC-based coffee business.</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="sharonsprings.html" style="text-decoration: none; color: inherit;">
           <h3>Sharon Springs Harvest Festival</h3>
-          <p>Photography, video coverage, and community engagement strategy for a seasonal upstate NY festival.</p>
-        </article>
-
-        <article class="card">
-          <div class="media">
-            <img src="assets/img/eyeseemenyc.jpg" alt="Eye See Me NYC project preview" loading="lazy">
-          </div>
+          <p>Photography, content creation, and event coverage for a large seasonal festival.</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="eyeseemenyc.html" style="text-decoration: none; color: inherit;">
           <h3>Eye See Me NYC</h3>
-          <p>Visual storytelling and brand strategy for a creative eyewear pop-up in New York City.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Clients -->
-    <section class="section" id="clients">
-      <h2 class="section-title center">Clients</h2>
-
-      <!-- Black Cat Café -->
-      <h3 class="client-title">Black Cat Café</h3>
-
-      <!-- 3×4 gallery in the EXACT order you requested -->
-      <div class="grid-3x4">
-        <!-- Row 1 (vertical) -->
-        <figure class="tile v"><img src="assets/img/closeCroissants.JPG" alt="Close-up croissants" loading="lazy"></figure>
-        <figure class="tile v"><img src="assets/img/balsamics.jpg" alt="Balsamics" loading="lazy"></figure>
-        <figure class="tile v"><img src="assets/img/fruitcakeSlices.JPG" alt="Fruitcake slices" loading="lazy"></figure>
-
-        <!-- Row 2 (horizontal) -->
-        <figure class="tile h"><img src="assets/img/grapeLeaves.jpg" alt="Grape leaves" loading="lazy"></figure>
-        <figure class="tile h"><img src="assets/img/artOnWall.JPG" alt="Art on café wall" loading="lazy"></figure>
-        <figure class="tile h"><img src="assets/img/thanksgiving.jpg" alt="Thanksgiving display" loading="lazy"></figure>
-
-        <!-- Row 3 (horizontal) -->
-        <figure class="tile h"><img src="assets/img/croissantAndIcedCoffee.jpg" alt="Croissant and iced coffee" loading="lazy"></figure>
-        <figure class="tile h"><img src="assets/img/windowSeat.JPG" alt="Window seating" loading="lazy"></figure>
-        <figure class="tile h"><img src="assets/img/fruitcakes.JPG" alt="Fruitcakes" loading="lazy"></figure>
-
-        <!-- Row 4 (vertical) — each image opens an Instagram video in a new tab -->
-        <a class="tile v" href="https://www.instagram.com/p/DIWu6zSuDc2/" target="_blank" rel="noopener">
-          <img src="assets/img/BlackCatExterior.JPG" alt="Exterior of Black Cat Café (opens Instagram video)" loading="lazy">
-        </a>
-        <a class="tile v" href="https://www.instagram.com/p/DIMCtPbuU-m/" target="_blank" rel="noopener">
-          <img src="assets/img/mochaVideoPic.jpg" alt="Mocha video thumbnail (opens Instagram video)" loading="lazy">
-        </a>
-        <a class="tile v" href="https://www.instagram.com/p/DJWtx8HubbA/" target="_blank" rel="noopener">
-          <img src="assets/img/cafeVideoPic.jpg" alt="Cafe video thumbnail (opens Instagram video)" loading="lazy">
+          <p>Visual storytelling and digital marketing for an arts and culture initiative.</p>
         </a>
       </div>
+    </div>
+  </section>
 
-      <!-- Empty Pockets Ranch -->
-      <h3 class="client-title" style="margin-top:2.5rem;">Empty Pockets Ranch</h3>
-      <div class="grid">
-        <figure class="tile"><img src="assets/img/emptyPockets1.jpg" alt="Empty Pockets Ranch event photo" loading="lazy"></figure>
-        <figure class="tile"><img src="assets/img/emptyPockets2.jpg" alt="Empty Pockets Ranch landscape" loading="lazy"></figure>
-        <figure class="tile"><img src="assets/img/emptyPockets3.jpg" alt="Empty Pockets Ranch animals" loading="lazy"></figure>
-      </div>
-    </section>
-  </main>
+  <!-- Clients -->
+  <section class="section">
+    <h2 class="section-title">Clients</h2>
+    <h3>Black Cat Cafe</h3>
+    <div class="grid-3x4">
+      <!-- Row 1 -->
+      <div class="tile h"><img src="assets/img/closeCroissants.JPG" alt="Close Croissants"></div>
+      <div class="tile h"><img src="assets/img/balsamics.jpg" alt="Balsamics"></div>
+      <div class="tile h"><img src="assets/img/fruitcakeSlices.JPG" alt="Fruitcake Slices"></div>
+      <!-- Row 2 -->
+      <div class="tile h"><img src="assets/img/grapeLeaves.jpeg" alt="Grape Leaves"></div>
+      <div class="tile h"><img src="assets/img/artOnWall.JPG" alt="Art on Wall"></div>
+      <div class="tile h"><img src="assets/img/thanksgiving.jpeg" alt="Thanksgiving"></div>
+      <!-- Row 3 -->
+      <div class="tile h"><img src="assets/img/CroissantAndIcedCoffee.jpg" alt="Croissant and Iced Coffee"></div>
+      <div class="tile h"><img src="assets/img/windowSeat.JPG" alt="Window Seat"></div>
+      <div class="tile h"><img src="assets/img/fruitcakes.JPG" alt="Fruitcakes"></div>
+      <!-- Row 4 -->
+      <div class="tile v"><a href="https://www.instagram.com/p/DIWu6zSuDc2/" target="_blank"><img src="assets/img/BlackCatExterior.JPG" alt="Black Cat Exterior"></a></div>
+      <div class="tile v"><a href="https://www.instagram.com/p/DIMCtPbuU-m/" target="_blank"><img src="assets/img/mochaVideoPic.jpeg" alt="Mocha Video Pic"></a></div>
+      <div class="tile v"><a href="https://www.instagram.com/p/DJWtx8HubbA/" target="_blank"><img src="assets/img/cafeVideoPic.jpeg" alt="Cafe Video Pic"></a></div>
+    </div>
 
-  <footer class="site-footer">
-    <div class="container"><small>© <span id="year"></span> Jillian Grace Bent</small></div>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-  </footer>
+    <h3 style="margin-top: 3rem;">Empty Pockets Ranch</h3>
+    <p>Photography and event coverage for the Empty Pockets Ranch Sunflower Festival.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2025 Jillian Grace Bent. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
-
