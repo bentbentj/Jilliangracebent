@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio | Jillian Bent</title>
   <meta name="description" content="Experience and selected projects with outcomes." />
-  <link rel="stylesheet" href="style.css?v=7" />
+  <link rel="stylesheet" href="style.css?v=10" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
@@ -22,6 +22,7 @@
   </header>
 
   <main class="container">
+    <!-- Intro -->
     <section class="hero center">
       <h1 class="hero-title">Portfolio</h1>
       <p class="hero-subtitle" style="max-width:70ch;margin:0 auto 1.25rem;">
@@ -30,6 +31,7 @@
       <a class="btn-pill" href="assets/JillianGraceBent_Resume.pdf">Download resume <span class="arrow">→</span></a>
     </section>
 
+    <!-- Feature trio -->
     <section class="section">
       <div class="features">
         <div class="feature"><h3>Content and brand</h3><p>Messaging, light identity, and content plans.</p></div>
@@ -38,6 +40,7 @@
       </div>
     </section>
 
+    <!-- Experience -->
     <section class="section">
       <h2 class="section-title center">Experience</h2>
       <ol class="timeline" style="margin-top:.8rem;">
@@ -48,7 +51,7 @@
           </div>
           <ul class="t-points">
             <li>Built content calendars and launch assets for creators and local brands.</li>
-            <li>Produced photo sets and short-form video for IG and TikTok.</li>
+            <li>Produced photo sets and short‑form video for IG and TikTok.</li>
             <li>Delivered growth reports with clear next steps.</li>
           </ul>
         </li>
@@ -66,10 +69,9 @@
       </ol>
     </section>
 
+    <!-- Selected Projects (keep your two cards if you like) -->
     <section class="section" id="selected-projects">
       <h2 class="section-title center">Selected Projects</h2>
-
-      <!-- Keep your two intro cards -->
       <div class="grid">
         <article class="card">
           <div class="media"><img src="assets/img/project-latte.jpg" alt="Latte art close-up" loading="lazy"></div>
@@ -79,64 +81,72 @@
         </article>
         <article class="card">
           <div class="media">
-            <video controls preload="metadata" poster="assets/img/video-poster.jpg">
-              <source src="assets/media/reel-15s.mp4" type="video/mp4">
-            </video>
+            <img src="assets/img/video-poster.jpg" alt="Video project poster" loading="lazy">
           </div>
           <h3>Short reel</h3>
-          <p>Fifteen second cut focused on pacing and color mood.</p>
+          <p>Fifteen‑second cut focused on pacing and color mood.</p>
           <a class="btn-pill" href="contact.html">See details <span class="arrow">→</span></a>
         </article>
       </div>
+    </section>
 
-      <!-- Black Cat Café — Photos (3×2) -->
-      <h3 class="center" style="margin-top:2.2rem;">Work with Black Cat Cafe</h3>
-      <div class="grid-3">
-        <figure class="tile">
-          <img src="assets/img/artOnWall.JPG" alt="Art on café wall" loading="lazy" data-lightbox>
+    <!-- Black Cat Café: 3×4 gallery (no crop) with IG links on last row -->
+    <section class="section" id="black-cat-grid">
+      <h2 class="section-title center">Black Cat Café — Selected visuals</h2>
+
+      <div class="grid-3x4">
+
+        <!-- Row 1 — vertical images -->
+        <figure class="tile v">
+          <img src="assets/img/BlackCatExterior.JPG" alt="Black Cat exterior" loading="lazy">
         </figure>
-        <figure class="tile">
-          <img src="assets/img/fruitcakes.JPG" alt="Fruitcakes" loading="lazy" data-lightbox>
+        <figure class="tile v">
+          <img src="assets/img/artOnWall.JPG" alt="Art on café wall" loading="lazy">
         </figure>
-        <figure class="tile">
-          <img src="assets/img/windowSeat.JPG" alt="Window seating area" loading="lazy" data-lightbox>
+        <figure class="tile v">
+          <img src="assets/img/windowSeat.JPG" alt="Window seating" loading="lazy">
         </figure>
-        <figure class="tile">
-          <img src="assets/img/BlackCatExterior.JPG" alt="Exterior of Black Cat Café" loading="lazy" data-lightbox>
+
+        <!-- Row 2 — horizontal images -->
+        <figure class="tile h">
+          <img src="assets/img/closeCroissants.JPG" alt="Close-up croissants" loading="lazy">
         </figure>
-        <figure class="tile">
-          <img src="assets/img/closeCroissants.JPG" alt="Close-up of croissants" loading="lazy" data-lightbox>
+        <figure class="tile h">
+          <img src="assets/img/fruitcakes.JPG" alt="Fruitcakes" loading="lazy">
         </figure>
-        <figure class="tile">
-          <img src="assets/img/fruitcakeSlices.JPG" alt="Sliced fruitcake" loading="lazy" data-lightbox>
+        <figure class="tile h">
+          <img src="assets/img/fruitcakeSlices.JPG" alt="Fruitcake slices" loading="lazy">
         </figure>
+
+        <!-- Row 3 — horizontal images (swap filenames to your actual ones if different) -->
+        <figure class="tile h">
+          <img src="assets/img/balsamics.jpg" alt="Balsamics" loading="lazy">
+        </figure>
+        <figure class="tile h">
+          <img src="assets/img/grapeLeaves.jpg" alt="Grape leaves" loading="lazy">
+        </figure>
+        <figure class="tile h">
+          <img src="assets/img/croissantAndIcedCoffee.jpg" alt="Croissant and iced coffee" loading="lazy">
+        </figure>
+
+        <!-- Row 4 — vertical tiles linking to Instagram videos (thumbnails you provide) -->
+        <a class="tile v" href="https://www.instagram.com/p/DIWu6zSuDc2/" target="_blank" rel="noopener">
+          <img src="assets/img/ig-thumb-1.jpg" alt="Instagram video 1 thumbnail" loading="lazy">
+        </a>
+        <a class="tile v" href="https://www.instagram.com/p/DIMCtPbuU-m/" target="_blank" rel="noopener">
+          <img src="assets/img/ig-thumb-2.jpg" alt="Instagram video 2 thumbnail" loading="lazy">
+        </a>
+        <a class="tile v" href="https://www.instagram.com/p/DJWtx8HubbA/" target="_blank" rel="noopener">
+          <img src="assets/img/ig-thumb-3.jpg" alt="Instagram video 3 thumbnail" loading="lazy">
+        </a>
+
       </div>
-<!-- Black Cat Café — Videos (3-wide, even, playable) -->
-<div class="grid-3" style="margin-top:1.2rem;">
-  <figure class="tile">
-    <video controls preload="metadata" playsinline
-           style="width:100%;height:auto;border-radius:12px;">
-      <source src="assets/vid/honeycaramel.mov" type="video/quicktime">
-      <source src="assets/vid/honeycaramel.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </figure>
+    </section>
+  </main>
 
-  <figure class="tile">
-    <video controls preload="metadata" playsinline
-           style="width:100%;height:auto;border-radius:12px;">
-      <source src="assets/vid/mocha.mov" type="video/quicktime">
-      <source src="assets/vid/mocha.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </figure>
-
-  <figure class="tile">
-    <video controls preload="metadata" playsinline
-           style="width:100%;height:auto;border-radius:12px;">
-      <source src="assets/vid/coffeeWithMilk.mov" type="video/quicktime">
-      <source src="assets/vid/coffeeWithMilk.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </figure>
-</div>
+  <footer class="site-footer">
+    <div class="container"><small>© <span id="year"></span> Jillian Grace Bent</small></div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
