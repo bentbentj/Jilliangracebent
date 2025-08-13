@@ -24,7 +24,7 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-img, video{ max-width:100%; height:auto; display:block; }
+img{ max-width:100%; height:auto; display:block; }
 a{ color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:hover{ text-decoration: none; }
 
@@ -52,7 +52,7 @@ a:hover{ text-decoration: none; }
 .nav-list a:hover,
 .nav-list a.active{ background: rgba(0,0,0,.08); }
 
-/* Safety if class is missing */
+/* Fallback if classes go missing */
 header nav ul{ list-style: none; margin: 0; padding: .9rem 0; display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
 header nav a{ color: var(--link); font-weight: 600; padding: .42rem .7rem; border-radius: 999px; text-decoration: none; }
 header nav a:hover, header nav a.active{ background: rgba(0,0,0,.08); }
@@ -85,7 +85,7 @@ h2.section-title{
   color: var(--ink);
 }
 
-/* ===== Generic card grid ===== */
+/* ===== Generic 2-up card grid ===== */
 .grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -102,9 +102,9 @@ h2.section-title{
 .card h3{ margin: 0 0 .4rem; font-size: 1.1rem; }
 .card p{ margin: 0 0 .6rem; color: var(--muted); }
 .media{ border-radius: 10px; overflow: hidden; }
-.media img, .media video{ border-radius: 8px; object-fit: cover; }
+.media img{ border-radius: 8px; object-fit: cover; }
 
-/* ===== Feature trio with separators ===== */
+/* ===== Feature trio ===== */
 .features{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -119,13 +119,10 @@ h2.section-title{
 .feature h3{ margin: 0 0 .4rem; font-size: 1.2rem; font-weight: 700; }
 .feature p{ margin: 0; color: var(--muted); }
 
-/* ===== Timeline (Portfolio) ===== */
+/* ===== Timeline ===== */
 .timeline{ list-style: none; margin: 0; padding: 0 0 0 1rem; border-left: 2px solid var(--line); }
 .t-item{ position: relative; padding: 0 0 1.2rem 1.2rem; }
-.t-item::before{
-  content: ""; position: absolute; left: -8px; top: .25rem;
-  width: 10px; height: 10px; background: var(--link); border-radius: 50%;
-}
+.t-item::before{ content: ""; position: absolute; left: -8px; top: .25rem; width: 10px; height: 10px; background: var(--link); border-radius: 50%; }
 .t-header{ display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 .t-header h3{ margin: 0; font-size: 1.1rem; }
 .t-meta{ color: var(--muted); font-size: .95rem; }
@@ -135,11 +132,7 @@ h2.section-title{
 /* ===== Buttons ===== */
 .btn{ display: inline-block; padding: .7rem 1rem; background: var(--link); color: #fff; border-radius: 10px; border: 0; font-weight: 600; }
 .btn:hover{ filter: brightness(.95); }
-.btn-pill{
-  display: inline-flex; align-items: center; gap: .45rem;
-  padding: .75rem 1.1rem; border-radius: 999px; border: 1px solid var(--line);
-  background: transparent; color: var(--ink); text-decoration: none; font-weight: 600;
-}
+.btn-pill{ display: inline-flex; align-items: center; gap: .45rem; padding: .75rem 1.1rem; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--ink); text-decoration: none; font-weight: 600; }
 .btn-pill:hover{ background: rgba(0,0,0,.06); text-decoration: none; }
 .btn-pill .arrow{ font-size: 1.1rem; line-height: 1; }
 
@@ -152,7 +145,7 @@ h2.section-title{
   text-align: center;
 }
 
-/* ===== Services: perfect squares ===== */
+/* ===== Services grid (elsewhere) ===== */
 .srv-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .srv-card{
   background: var(--bg-elev);
@@ -167,141 +160,51 @@ h2.section-title{
 .srv-card h3{ margin: 0 0 .3rem; }
 .srv-card p{ margin: 0; color: var(--muted); font-size: .95rem; }
 
-/* Fallback for very old browsers */
-@supports not (aspect-ratio: 1 / 1){
-  .srv-card::before{ content: ""; float: left; padding-top: 100%; }
-  .srv-card > *{ position: relative; z-index: 1; }
-}
-
-/* ===== Portfolio gallery (images) ===== */
-.gallery-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;                 /* match .grid gap */
-  margin-top: 1rem;
-}
-.gallery-grid img{
-  width: 100%; height: 100%; display: block;
-  background: var(--bg-elev);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  box-shadow: 0 0 0 rgba(0,0,0,0);
-  transform: translateY(0);
-  transition: transform .2s ease, box-shadow .2s ease;
-  aspect-ratio: 4 / 3;         /* uniform tile crop */
-  object-fit: cover; object-position: center;
-}
-.gallery-grid img:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
-}
-
-/* ===== Portfolio videos (hero + two-up) ===== */
-/* Utility: vertical (9:16) video tiles */
-.v-portrait{
-  aspect-ratio: 9 / 16;
-  width: 100%; height: auto;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-/* Container under the Black Cat Cafe section */
-.video-section{ margin-top: 2rem; }
-
-/* Centered hero video */
-.video-center{
-  display: flex; justify-content: center; margin-bottom: 1.4rem;
-}
-.video-center video{
-  max-width: 640px; width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
-}
-
-/* Two-up grid that collapses to one */
-.video-grid{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem;
-}
-.video-grid video{
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 900px){
-  .features{ grid-template-columns: 1fr; }
-  .feature + .feature{ border-left: 0; border-top: 1px solid var(--line); }
-  .srv-grid{ grid-template-columns: repeat(2, 1fr); }
-  .video-center video{ max-width: 520px; }
-  .video-grid{ grid-template-columns: 1fr; }
-  .gallery-grid{ grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 700px){
-  .grid{ grid-template-columns: 1fr; }
-  .nav-list{ gap: .8rem; }
-  .gallery-grid{ grid-template-columns: 1fr; }
-}
-
-/* ===== Simple slider (if used) ===== */
-.t-slider{ position: relative; overflow: hidden; }
-.t-track{ display: flex; transition: transform .3s ease; will-change: transform; }
-.t-slide{
-  min-width: 100%;
-  padding: 1.2rem 1.4rem;
-  background: var(--bg-elev);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-}
-.t-prev,.t-next{
-  position: absolute; top: 50%; transform: translateY(-50%);
-  background: rgba(0,0,0,.06); border: 1px solid var(--line);
-  border-radius: 999px; width: 36px; height: 36px;
-  display: grid; place-items: center; cursor: pointer;
-}
-.t-prev{ left: .4rem; } .t-next{ right: .4rem; }
-.t-prev:hover,.t-next:hover{ background: rgba(0,0,0,.1); }
-/* 3-column utility grid (matches .grid gap) */
-.grid-3{
+/* ===== Black Cat 3×4 gallery (no crop) ===== */
+.grid-3x4{
+  --rowH-vert: 360px;   /* top & bottom rows */
+  --rowH-horz: 240px;   /* middle two rows */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
 }
-
-/* Tile wrapper so images & videos share the same chrome */
 .tile{
   background: var(--bg-elev);
   border: 1px solid var(--line);
   border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
   overflow: hidden;
   transition: transform .2s ease, box-shadow .2s ease;
 }
 .tile:hover{ transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,.08); }
-
-/* Images: uniform 4:3 grid crop */
+.tile.v{ height: var(--rowH-vert); }
+.tile.h{ height: var(--rowH-horz); }
 .tile > img{
-  width: 100%; height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto; height: auto;
+  object-fit: contain; /* prevents cropping */
   display: block;
-  aspect-ratio: 4 / 3;
-  object-fit: cover; object-position: center;
+  border-radius: 10px;
 }
 
-/* Videos: uniform 9:16 grid crop */
-.tile > video.portrait{
-  width: 100%; height: auto;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
-  display: block;
+/* ===== Responsive ===== */
+@media (max-width: 1000px){
+  .features{ grid-template-columns: 1fr; }
+  .feature + .feature{ border-left: 0; border-top: 1px solid var(--line); }
+  .grid{ grid-template-columns: 1fr; }
+  .srv-grid{ grid-template-columns: repeat(2, 1fr); }
+  .grid-3x4{ gap: 1rem; }
+  .tile.v{ height: 320px; }
+  .tile.h{ height: 210px; }
 }
-
-/* Responsive */
-@media (max-width: 900px){
-  .grid-3{ grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 760px){
+  .grid-3x4{ grid-template-columns: repeat(2, 1fr); }
+  .tile.v{ height: 300px; }
+  .tile.h{ height: 200px; }
 }
-@media (max-width: 700px){
-  .grid-3{ grid-template-columns: 1fr; }
+@media (max-width: 520px){
+  .grid-3x4{ grid-template-columns: 1fr; }
+  .tile.v{ height: 360px; }
+  .tile.h{ height: 240px; }
 }
-
