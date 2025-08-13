@@ -44,6 +44,8 @@ a:hover{ text-decoration: none; }
   list-style: none; margin: 0; padding: .9rem 0;
   display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap;
 }
+/* NEW: make sure each item renders as a block so nothing disappears */
+.nav-list li{ display: inline-block; }
 .nav-list a{
   color: var(--link); font-weight: 600;
   padding: .42rem .7rem; border-radius: 999px;
@@ -161,32 +163,53 @@ h2.section-title{
   color: var(--ink);
 }
 
-/* ===== Black Cat 3×4 gallery (no crop) ===== */
-.grid-3x4{
-  --rowH-vert: 360px;   /* top & bottom rows */
-  --rowH-horz: 240px;   /* middle two rows */
+/* ===== Projects row: three small boxes with brief descriptions (NEW) ===== */
+.projects-row{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
+  justify-items: stretch;
 }
+.project-card{
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.project-card:hover{ transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+.project-card h3{ margin: 0 0 .35rem; font-size: 1.05rem; }
+.project-card p{ margin: 0; color: var(--muted); font-size: .95rem; }
+
+/* ===== Black Cat 3×4 gallery — SMALL SQUARES that fill (UPDATED) ===== */
+.grid-3x4{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Make every tile a small square “cube” */
 .tile{
   background: var(--bg-elev);
   border: 1px solid var(--line);
   border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
   overflow: hidden;
   transition: transform .2s ease, box-shadow .2s ease;
+
+  /* square + uniform size driven by aspect ratio */
+  aspect-ratio: 1 / 1;          /* ensures true squares */
+  width: 100%;
 }
 .tile:hover{ transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,.08); }
-.tile.v{ height: var(--rowH-vert); }
-.tile.h{ height: var(--rowH-horz); }
+
+/* Make images FILL their squares */
 .tile > img{
-  max-width: 100%;
-  max-height: 100%;
-  width: auto; height: auto;
-  object-fit: contain; /* prevents cropping */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;            /* <-- fills the square fully */
   display: block;
-  border-radius: 10px;
+  border-radius: 0;             /* inside a rounded parent already */
 }
 
 /* ===== Responsive ===== */
@@ -195,19 +218,13 @@ h2.section-title{
   .feature + .feature{ border-left: 0; border-top: 1px solid var(--line); }
   .grid{ grid-template-columns: 1fr; }
   .grid-3{ grid-template-columns: repeat(2, 1fr); }
-  .srv-grid{ grid-template-columns: repeat(2, 1fr); }
-  .grid-3x4{ gap: 1rem; }
-  .tile.v{ height: 320px; }
-  .tile.h{ height: 210px; }
+  .projects-row{ grid-template-columns: 1fr; }
 }
 @media (max-width: 760px){
   .grid-3{ grid-template-columns: 1fr; }
   .grid-3x4{ grid-template-columns: repeat(2, 1fr); }
-  .tile.v{ height: 300px; }
-  .tile.h{ height: 200px; }
 }
 @media (max-width: 520px){
   .grid-3x4{ grid-template-columns: 1fr; }
-  .tile.v{ height: 360px; }
-  .tile.h{ height: 240px; }
 }
+
