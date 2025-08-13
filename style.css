@@ -44,7 +44,6 @@ a:hover{ text-decoration: none; }
   list-style: none; margin: 0; padding: .9rem 0;
   display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap;
 }
-.nav-list li{ display: inline-block; } /* keeps items from collapsing */
 .nav-list a{
   color: var(--link); font-weight: 600;
   padding: .42rem .7rem; border-radius: 999px;
@@ -70,93 +69,80 @@ header nav a:hover, header nav a.active{ background: rgba(0,0,0,.08); }
   font-family: var(--h-serif);
   font-weight: 500;
   letter-spacing: -.01em;
-  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
-  line-height: 1.15;
+  font-size: clamp(2.75rem, 6vw, 4.25rem);
+  line-height: 1.1;
   margin: 0 0 .75rem;
 }
-.hero-subtitle{ font-size: 1.05rem; color: var(--muted); }
+.hero-subtitle{ font-size: 1.1rem; color: var(--muted); }
 
 /* ===== Section headings ===== */
 h2.section-title{
   font-family: var(--h-serif);
   font-weight: 500;
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.2;
   margin: 0 0 1.2rem;
   color: var(--ink);
 }
 
-/* ===== Projects: three tiny cubes in one line (no big boxes) ===== */
-.portfolio .projects-grid{
-  --cube: 140px;                 /* desktop size; see media queries below */
+/* ===== Card grids ===== */
+/* 2-up (used in some pages) */
+.grid{
   display: grid;
-  grid-template-columns: repeat(3, var(--cube));
-  gap: 12px;
-  justify-content: center;
-  margin-top: .4rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
 }
-.portfolio .project-cube{
-  width: var(--cube);
-  height: var(--cube);
-  display: grid; place-items: center;
+/* 3-up (Selected Projects & small client rows) */
+.grid-3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.card{
   background: var(--bg-elev);
   border: 1px solid var(--line);
   border-radius: 12px;
-  text-decoration: none;
-  color: var(--ink);
-  text-align: center;
-  padding: .6rem;
+  padding: 1rem;
   transition: transform .2s ease, box-shadow .2s ease;
 }
-.portfolio .project-cube:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
-}
-.portfolio .project-cube span{
-  font-weight: 600; font-size: .95rem; line-height: 1.2;
-}
+.card:hover{ transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+.card h3{ margin: 0 0 .4rem; font-size: 1.1rem; }
+.card p{ margin: 0 0 .6rem; color: var(--muted); }
+.media{ border-radius: 10px; overflow: hidden; }
+.media img{ border-radius: 8px; object-fit: cover; }
 
-/* ===== Black Cat 3×4 gallery (small, centered, no cropping) ===== */
-.portfolio .grid-3x4{
-  --cube: 140px;
+/* ===== Feature trio ===== */
+.features{
   display: grid;
-  grid-template-columns: repeat(3, var(--cube));
-  gap: 12px;
-  justify-content: center; /* centers the 3 columns within the page */
-}
-.portfolio .tile{
-  width: var(--cube);
-  height: var(--cube);
-  background: var(--bg-elev);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
   border: 1px solid var(--line);
   border-radius: 12px;
   overflow: hidden;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.portfolio .tile:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
-}
-.portfolio .tile > img{
-  width: 100%; height: 100%;
-  object-fit: contain;  /* shows full image; no cropping */
   background: var(--bg-elev);
-  display: block;
 }
+.feature{ padding: 1.6rem 1.4rem; }
+.feature + .feature{ border-left: 1px solid var(--line); }
+.feature h3{ margin: 0 0 .4rem; font-size: 1.2rem; font-weight: 700; }
+.feature p{ margin: 0; color: var(--muted); }
 
-.client-title{
-  font-family: var(--h-serif);
-  font-size: 1.25rem;
-  margin: 0 0 .8rem 0;
-  color: var(--ink);
-}
+/* ===== Timeline (not used on this page, kept for consistency) ===== */
+.timeline{ list-style: none; margin: 0; padding: 0 0 0 1rem; border-left: 2px solid var(--line); }
+.t-item{ position: relative; padding: 0 0 1.2rem 1.2rem; }
+.t-item::before{ content: ""; position: absolute; left: -8px; top: .25rem; width: 10px; height: 10px; background: var(--link); border-radius: 50%; }
+.t-header{ display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.t-header h3{ margin: 0; font-size: 1.1rem; }
+.t-meta{ color: var(--muted); font-size: .95rem; }
+.t-points{ margin: .4rem 0 0 0; }
+.t-points li{ margin: .25rem 0; }
 
-.ig-note{
-  margin-top: .6rem;
-  color: var(--muted);
-  text-align: center;
-  font-size: .95rem;
-}
+/* ===== Buttons ===== */
+.btn{ display: inline-block; padding: .7rem 1rem; background: var(--link); color: #fff; border-radius: 10px; border: 0; font-weight: 600; }
+.btn:hover{ filter: brightness(.95); }
+.btn-pill{ display: inline-flex; align-items: center; gap: .45rem; padding: .75rem 1.1rem; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--ink); text-decoration: none; font-weight: 600; }
+.btn-pill:hover{ background: rgba(0,0,0,.06); text-decoration: none; }
+.btn-pill .arrow{ font-size: 1.1rem; line-height: 1; }
 
 /* ===== Footer ===== */
 .site-footer{
@@ -167,16 +153,61 @@ h2.section-title{
   text-align: center;
 }
 
+/* ===== Clients / headings ===== */
+.client-title{
+  font-family: var(--h-serif);
+  font-size: 1.4rem;
+  margin: 0 0 1rem 0;
+  color: var(--ink);
+}
+
+/* ===== Black Cat 3×4 gallery (no crop) ===== */
+.grid-3x4{
+  --rowH-vert: 360px;   /* top & bottom rows */
+  --rowH-horz: 240px;   /* middle two rows */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+.tile{
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.tile:hover{ transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+.tile.v{ height: var(--rowH-vert); }
+.tile.h{ height: var(--rowH-horz); }
+.tile > img{
+  max-width: 100%;
+  max-height: 100%;
+  width: auto; height: auto;
+  object-fit: contain; /* prevents cropping */
+  display: block;
+  border-radius: 10px;
+}
+
 /* ===== Responsive ===== */
-@media (max-width: 900px){
-  .portfolio .projects-grid,
-  .portfolio .grid-3x4{ --cube: 120px; gap: 10px; }
+@media (max-width: 1000px){
+  .features{ grid-template-columns: 1fr; }
+  .feature + .feature{ border-left: 0; border-top: 1px solid var(--line); }
+  .grid{ grid-template-columns: 1fr; }
+  .grid-3{ grid-template-columns: repeat(2, 1fr); }
+  .srv-grid{ grid-template-columns: repeat(2, 1fr); }
+  .grid-3x4{ gap: 1rem; }
+  .tile.v{ height: 320px; }
+  .tile.h{ height: 210px; }
 }
-@media (max-width: 620px){
-  .portfolio .projects-grid,
-  .portfolio .grid-3x4{ --cube: 104px; gap: 9px; }
+@media (max-width: 760px){
+  .grid-3{ grid-template-columns: 1fr; }
+  .grid-3x4{ grid-template-columns: repeat(2, 1fr); }
+  .tile.v{ height: 300px; }
+  .tile.h{ height: 200px; }
 }
-@media (max-width: 480px){
-  .portfolio .projects-grid,
-  .portfolio .grid-3x4{ --cube: 96px; gap: 8px; }
+@media (max-width: 520px){
+  .grid-3x4{ grid-template-columns: 1fr; }
+  .tile.v{ height: 360px; }
+  .tile.h{ height: 240px; }
 }
