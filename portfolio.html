@@ -4,11 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio | Jillian Bent</title>
-  <meta name="description" content="Experience and selected projects with outcomes." />
-  <link rel="stylesheet" href="style.css?v=10" />
+  <meta name="description" content="Portfolio of past work and selected projects." />
+  <link rel="stylesheet" href="style.css?v=14" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <!-- Header / Nav -->
   <header class="site-header">
     <nav class="nav container" aria-label="Primary">
       <ul class="nav-list">
@@ -22,124 +23,87 @@
   </header>
 
   <main class="container">
-    <!-- Intro -->
+    <!-- Hero -->
     <section class="hero center">
-      <h1 class="hero-title">Portfolio</h1>
+      <h1 class="hero-title">My Portfolio of Past Work</h1>
       <p class="hero-subtitle" style="max-width:70ch;margin:0 auto 1.25rem;">
-        A quick look at my experience and selected projects. Organized for skimming, with links to deeper work.
+        A quick look at some of my past projects and clients I have worked with
       </p>
-      <a class="btn-pill" href="assets/JillianGraceBent_Resume.pdf">Download resume <span class="arrow">→</span></a>
     </section>
 
-    <!-- Feature trio -->
-    <section class="section">
-      <div class="features">
-        <div class="feature"><h3>Content and brand</h3><p>Messaging, light identity, and content plans.</p></div>
-        <div class="feature"><h3>Photo and video</h3><p>Event coverage and short edits for social.</p></div>
-        <div class="feature"><h3>Growth outcomes</h3><p>Improved reach, engagement, and sales.</p></div>
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section class="section">
-      <h2 class="section-title center">Experience</h2>
-      <ol class="timeline" style="margin-top:.8rem;">
-        <li class="t-item">
-          <div class="t-header">
-            <h3>Creative Consultant, Freelance</h3>
-            <span class="t-meta">2023–present • NYC and Florida</span>
-          </div>
-          <ul class="t-points">
-            <li>Built content calendars and launch assets for creators and local brands.</li>
-            <li>Produced photo sets and short‑form video for IG and TikTok.</li>
-            <li>Delivered growth reports with clear next steps.</li>
-          </ul>
-        </li>
-        <li class="t-item">
-          <div class="t-header">
-            <h3>Social and Community, Black Cat Café</h3>
-            <span class="t-meta">2024–2025 • Gainesville, FL</span>
-          </div>
-          <ul class="t-points">
-            <li>Shot and edited content featuring local partners and events.</li>
-            <li>Streamlined admin systems and vendor outreach.</li>
-            <li>Helped lift event turnout with targeted content runs.</li>
-          </ul>
-        </li>
-      </ol>
-    </section>
-
-    <!-- Selected Projects (keep your two cards if you like) -->
+    <!-- Selected Projects (3-up) -->
     <section class="section" id="selected-projects">
       <h2 class="section-title center">Selected Projects</h2>
-      <div class="grid">
-        <article class="card">
-          <div class="media"><img src="assets/img/project-latte.jpg" alt="Latte art close-up" loading="lazy"></div>
-          <h3>Café story set</h3>
-          <p>Photo series and mini edits used across Instagram and menus.</p>
-          <a class="btn-pill" href="contact.html">See details <span class="arrow">→</span></a>
-        </article>
+      <div class="grid-3">
         <article class="card">
           <div class="media">
-            <img src="assets/img/video-poster.jpg" alt="Video project poster" loading="lazy">
+            <img src="assets/img/badbeansnyc.jpg" alt="BadBeansNYC project preview" loading="lazy">
           </div>
-          <h3>Short reel</h3>
-          <p>Fifteen‑second cut focused on pacing and color mood.</p>
+          <h3>BadBeansNYC</h3>
+          <p>Creative direction, content production, and social media growth for a NYC-based coffee concept.</p>
+          <a class="btn-pill" href="contact.html">See details <span class="arrow">→</span></a>
+        </article>
+
+        <article class="card">
+          <div class="media">
+            <img src="assets/img/sharonsprings.jpg" alt="Sharon Springs Harvest Festival project preview" loading="lazy">
+          </div>
+          <h3>Sharon Springs Harvest Festival</h3>
+          <p>Photography, video coverage, and community engagement strategy for a seasonal upstate NY festival.</p>
+          <a class="btn-pill" href="contact.html">See details <span class="arrow">→</span></a>
+        </article>
+
+        <article class="card">
+          <div class="media">
+            <img src="assets/img/eyeseemenyc.jpg" alt="Eye See Me NYC project preview" loading="lazy">
+          </div>
+          <h3>Eye See Me NYC</h3>
+          <p>Visual storytelling and brand strategy for a creative eyewear pop-up in New York City.</p>
           <a class="btn-pill" href="contact.html">See details <span class="arrow">→</span></a>
         </article>
       </div>
     </section>
 
-    <!-- Black Cat Café: 3×4 gallery (no crop) with IG links on last row -->
-    <section class="section" id="black-cat-grid">
-      <h2 class="section-title center">Black Cat Café — Selected visuals</h2>
+    <!-- Clients -->
+    <section class="section" id="clients">
+      <h2 class="section-title center">Clients</h2>
 
+      <!-- Black Cat Café -->
+      <h3 class="client-title">Black Cat Café</h3>
       <div class="grid-3x4">
+        <!-- Row 1 — vertical -->
+        <figure class="tile v"><img src="assets/img/closeCroissants.JPG" alt="Close-up croissants" loading="lazy"></figure>
+        <figure class="tile v"><img src="assets/img/balsamics.jpg" alt="Balsamics" loading="lazy"></figure>
+        <figure class="tile v"><img src="assets/img/fruitcakeSlices.JPG" alt="Fruitcake slices" loading="lazy"></figure>
 
-        <!-- Row 1 — vertical images -->
-        <figure class="tile v">
-          <img src="assets/img/BlackCatExterior.JPG" alt="Black Cat exterior" loading="lazy">
-        </figure>
-        <figure class="tile v">
-          <img src="assets/img/artOnWall.JPG" alt="Art on café wall" loading="lazy">
-        </figure>
-        <figure class="tile v">
-          <img src="assets/img/windowSeat.JPG" alt="Window seating" loading="lazy">
-        </figure>
+        <!-- Row 2 — horizontal -->
+        <figure class="tile h"><img src="assets/img/grapeLeaves.jpg" alt="Grape leaves" loading="lazy"></figure>
+        <figure class="tile h"><img src="assets/img/artOnWall.JPG" alt="Art on café wall" loading="lazy"></figure>
+        <figure class="tile h"><img src="assets/img/thanksgiving.jpg" alt="Thanksgiving display" loading="lazy"></figure>
 
-        <!-- Row 2 — horizontal images -->
-        <figure class="tile h">
-          <img src="assets/img/closeCroissants.JPG" alt="Close-up croissants" loading="lazy">
-        </figure>
-        <figure class="tile h">
-          <img src="assets/img/fruitcakes.JPG" alt="Fruitcakes" loading="lazy">
-        </figure>
-        <figure class="tile h">
-          <img src="assets/img/fruitcakeSlices.JPG" alt="Fruitcake slices" loading="lazy">
-        </figure>
+        <!-- Row 3 — horizontal -->
+        <figure class="tile h"><img src="assets/img/croissantAndIcedCoffee.jpg" alt="Croissant and iced coffee" loading="lazy"></figure>
+        <figure class="tile h"><img src="assets/img/windowSeat.JPG" alt="Window seating" loading="lazy"></figure>
+        <figure class="tile h"><img src="assets/img/fruitcakes.JPG" alt="Fruitcakes" loading="lazy"></figure>
 
-        <!-- Row 3 — horizontal images (swap filenames to your actual ones if different) -->
-        <figure class="tile h">
-          <img src="assets/img/balsamics.jpg" alt="Balsamics" loading="lazy">
-        </figure>
-        <figure class="tile h">
-          <img src="assets/img/grapeLeaves.jpg" alt="Grape leaves" loading="lazy">
-        </figure>
-        <figure class="tile h">
-          <img src="assets/img/croissantAndIcedCoffee.jpg" alt="Croissant and iced coffee" loading="lazy">
-        </figure>
-
-        <!-- Row 4 — vertical tiles linking to Instagram videos (thumbnails you provide) -->
+        <!-- Row 4 — vertical (Instagram links) -->
         <a class="tile v" href="https://www.instagram.com/p/DIWu6zSuDc2/" target="_blank" rel="noopener">
-          <img src="assets/img/ig-thumb-1.jpg" alt="Instagram video 1 thumbnail" loading="lazy">
+          <img src="assets/img/BlackCatExterior.JPG" alt="Exterior of Black Cat Café (opens Instagram video)" loading="lazy">
         </a>
         <a class="tile v" href="https://www.instagram.com/p/DIMCtPbuU-m/" target="_blank" rel="noopener">
-          <img src="assets/img/ig-thumb-2.jpg" alt="Instagram video 2 thumbnail" loading="lazy">
+          <img src="assets/img/mochaVideoPic.jpg" alt="Mocha video thumbnail (opens Instagram video)" loading="lazy">
         </a>
         <a class="tile v" href="https://www.instagram.com/p/DJWtx8HubbA/" target="_blank" rel="noopener">
-          <img src="assets/img/ig-thumb-3.jpg" alt="Instagram video 3 thumbnail" loading="lazy">
+          <img src="assets/img/cafeVideoPic.jpg" alt="Cafe video thumbnail (opens Instagram video)" loading="lazy">
         </a>
+      </div>
 
+      <!-- Empty Pockets Ranch -->
+      <h3 class="client-title" style="margin-top:2.5rem;">Empty Pockets Ranch</h3>
+      <div class="grid-3">
+        <figure class="tile"><img src="assets/img/emptyPockets1.jpg" alt="Empty Pockets Ranch event photo" loading="lazy"></figure>
+        <figure class="tile"><img src="assets/img/emptyPockets2.jpg" alt="Empty Pockets Ranch landscape" loading="lazy"></figure>
+        <figure class="tile"><img src="assets/img/emptyPockets3.jpg" alt="Empty Pockets Ranch animals" loading="lazy"></figure>
       </div>
     </section>
   </main>
